@@ -54,9 +54,6 @@ CONTAINER=
 trap cleanup EXIT
 
 IMAGE="katex/fonts:DF-$(openssl sha1 Dockerfile | tail -c 9)"
-TMPFILE=
-FILE=
-
 TMPFILE="$(mktemp "${TMPDIR:-/tmp}/mjf.XXXXXXXX")"
 FILE="$TMPFILE"
 pushd "src"
