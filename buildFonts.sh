@@ -37,7 +37,7 @@ used_fonts=(
     KaTeX_Typewriter-Regular
 )
 
-filetypes=( ttf eot woff woff2 )
+filetypes=( ttf woff woff2 )
 
 set -e
 cd "$(dirname "$0")"
