@@ -24,22 +24,13 @@ $map{cmr10} = {
 
     0x10 => 0x131,          # \imath (roman)
     0x11 => 0x237,          # \jmath (roman)
-    0x12 => 0x60,           # \grave
     0x12 => 0x2CB,          # \grave
-    0x12 => [0x300,-500,0], # \grave (combining)
-    0x13 => 0xB4,           # \acute
     0x13 => 0x2CA,          # \acute
-    0x13 => [0x301,-500,0], # \acute (combining)
     0x14 => 0x2C7,          # \check
-    0x14 => [0x30C,-500,0], # \check (combining)
     0x15 => 0x2D8,          # \breve
-    0x15 => [0x306,-500,0], # \breve (combining)
-    0x16 => 0xAF,           # \bar
     0x16 => 0x2C9,          # \bar
-    0x16 => [0x304,-500,0], # \bar (combining)
-    0x17 => [0xB0,-125,0],  # ring above
-    0x17 => [0x2DA,-125,0], # ring above
-    0x17 => [0x30A,-625,0], # ring above (combining)
+    0x17 => [0xB0,-125,0],  # \degree
+    0x17 => 0x02DA,         # \r, ring above
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -53,19 +44,15 @@ $map{cmr10} = {
     0x5C => 0x201C,         # ``
     [0x5D,0x5E] => 0x5D,    # ], ^
     0x5E => 0x2C6,          # \hat
-    0x5E => [0x302,-500,0], # \hat (combining)
-    0x5F => [0x2D9,111,0],  # \dot
-    0x5F => [0x307,-389,0], # \dot (combining)
+    0x5F => 0x2D9,          # \dot
     0x60 => 0x2018,         # `
     [0x61,0x7A] => 0x61,    # a-z
     [0x7B,0x7C] => 0x2013,  # \endash, \emdash
     0x7B => [0x5F,0,-310],  # underline
-    0x7D => [0x30B,-500,0], # double acute (combining)
+    0x7D => 0x2DD,          # double acute
     0x7E => [0x7E,0,-350],  # ~
     0x7E => 0x2DC,          # \tilde
-    0x7E => [0x303,-500,0], # \tilde (combining)
     0x7F => 0xA8,           # \ddot
-    0x7F => [0x308,-500,0], # \ddot (combining)
     0x19 => 0xDF,           # sharp S
     0x1A => 0xE6,           # ae ligature
     0x1B => 0x153,          # oe ligature
@@ -609,12 +596,13 @@ $map{cmti10} = {
 
     0x10 => 0x131,          # \imath (roman)
     0x11 => 0x237,          # \jmath (roman)
-    0x12 => [0x300,-511,0], # \grave (combining)
-    0x13 => [0x301,-511,0], # \acute (combining)
-    0x14 => [0x30C,-511,0], # \check (combining)
-    0x15 => [0x306,-511,0], # \breve (combining)
-    0x16 => [0x304,-511,0], # \bar (combining)
-    0x17 => [0x30A,-671,0], # ring above (combining)
+    0x12 => 0x2CB,          # \grave
+    0x13 => 0x2CA,          # \acute
+    0x14 => 0x2C7,          # \check
+    0x15 => 0x2D8,          # \breve
+    0x16 => 0x2C9,          # \bar
+    0x17 => [0xB0,-160,0],  # \degree
+    0x17 => 0x02DA,         # \r, ring above
 
     [0x21,0x23] => 0x21,    # !, ", #,
     0x22 => 0x201D,         # "
@@ -629,16 +617,16 @@ $map{cmti10} = {
     0x5B => 0x5B,           # [
     0x5C => 0x201C,         # ``
     [0x5D,0x5E] => 0x5D,    # ], ^
-    0x5E => [0x302,-511,0], # \hat (combining)
-    0x5F => [0x307,-409,0], # \dot (combining)
+    0x5E => 0x2C6,          # \hat
+    0x5F => 0x2D9,          # \dot
     0x60 => 0x2018,         # `
     [0x61,0x7A] => 0x61,    # a-z
     [0x7B,0x7C] => 0x2013,  # \endash, \emdash
     0x7B => [0x5F,0,-310],  # underline
-    0x7D => [0x30B,-511,0], # double acute (combining)
+    0x7D => 0x2DD,          # double acute
     0x7E => [0x7E,0,-350],  # ~
-    0x7E => [0x303,-511,0], # \tilde (combining)
-    0x7F => [0x308,-511,0], # \ddot (combining)
+    0x7E => 0x2DC,          # \tilde
+    0x7F => 0xA8,           # \ddot
     0x19 => 0xDF,           # sharp S
     0x1A => 0xE6,           # ae ligature
     0x1B => 0x153,          # oe ligature
@@ -666,22 +654,13 @@ $map{cmbx10} = {
 
     0x10 => 0x131,          # \imath (roman bold)
     0x11 => 0x237,          # \jmath (roman bold)
-    0x12 => 0x60,           # \grave
     0x12 => 0x2CB,          # \grave
-    0x12 => [0x300,-575,0], # \grave (combining)
-    0x13 => 0xB4,           # \acute
     0x13 => 0x2CA,          # \acute
-    0x13 => [0x301,-575,0], # \acute (combining)
     0x14 => 0x2C7,          # \check
-    0x14 => [0x30C,-575,0], # \check (combining)
     0x15 => 0x2D8,          # \breve
-    0x15 => [0x306,-575,0], # \breve (combining)
-    0x16 => 0xAF,           # \bar
     0x16 => 0x2C9,          # \bar
-    0x16 => [0x304,-575,0], # \bar (combining)
-    0x17 => [0xB0,-147,0],  # ring above
-    0x17 => [0x2DA,-147,0], # ring above
-    0x17 => [0x30A,-722,0], # ring above (combining)
+    0x17 => [0xB0,-147,0],  # \degree
+    0x17 => 0x02DA,         # \r, ring above
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -695,19 +674,15 @@ $map{cmbx10} = {
     0x5C => 0x201C,         # ``
     [0x5D,0x5E] => 0x5D,    # ], ^
     0x5E => 0x2C6,          # \hat
-    0x5E => [0x302,-575,0], # \hat (combining)
-    0x5F => [0x2D9,128,0],  # \dot
-    0x5F => [0x307,-447,0], # \dot (combining)
+    0x5F => 0x2D9,          # \dot
     0x60 => 0x2018,         # `
     [0x61,0x7A] => 0x61,    # a-z
     [0x7B,0x7C] => 0x2013,  # \endash, \emdash
     0x7B => [0x5F,0,-310],  # underline
-    0x7D => [0x30B,-575,0], # double acute (combining)
+    0x7D => 0x2DD,          # double acute
     0x7E => [0x7E,0,-350],  # ~
     0x7E => 0x2DC,          # \tilde
-    0x7E => [0x303,-575,0], # \tilde (combining)
     0x7F => 0xA8,           # \ddot
-    0x7F => [0x308,-575,0], # \ddot (combining)
     0x19 => 0xDF,           # sharp S
     0x1A => 0xE6,           # ae ligature
     0x1B => 0x153,          # oe ligature
@@ -1309,12 +1284,13 @@ $map{cmss10} = {
 
     0x10 => 0x131,          # \imath (roman)
     0x11 => 0x237,          # \jmath (roman)
-    0x12 => [0x300,-500,0], # \grave (combining)
-    0x13 => [0x301,-500,0], # \acute (combining)
-    0x14 => [0x30C,-500,0], # \check (combining)
-    0x15 => [0x306,-500,0], # \breve (combining)
-    0x16 => [0x304,-500,0], # \bar (combining)
-    0x17 => [0x30A,-542,0], # ring above (combining)
+    0x12 => 0x2CB,          # \grave
+    0x13 => 0x2CA,          # \acute
+    0x14 => 0x2C7,          # \check
+    0x15 => 0x2D8,          # \breve
+    0x16 => 0x2C9,          # \bar
+    0x17 => [0xB0,-142,0],  # \degree
+    0x17 => 0x02DA,         # \r, ring above
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -1327,16 +1303,16 @@ $map{cmss10} = {
     0x5B => 0x5B,           # [
     0x5C => 0x201C,         # ``
     [0x5D,0x5E] => 0x5D,    # ], ^
-    0x5E => [0x302,-500,0], # \hat (combining)
-    0x5F => [0x307,-389,0], # \dot (combining)
+    0x5E => 0x2C6,          # \hat
+    0x5F => 0x2D9,          # \dot
     0x60 => 0x2018,         # `
     [0x61,0x7A] => 0x61,    # a-z
     [0x7B,0x7C] => 0x2013,  # \endash, \emdash
     0x7B => [0x5F,0,-350],  # underline
-    0x7D => [0x30B,-500,0], # double acute (combining)
+    0x7D => 0x2DD,          # double acute
     0x7E => [0x7E,0,-350],  # ~
-    0x7E => [0x303,-500,0], # \tilde (combining)
-    0x7F => [0x308,-500,0], # \ddot (combining)
+    0x7E => 0x2DC,          # \tilde
+    0x7F => 0xA8,           # \ddot
   ],
 };
 
@@ -1353,12 +1329,13 @@ $map{cmssi10} = {
 
     0x10 => 0x131,          # \imath (roman)
     0x11 => 0x237,          # \jmath (roman)
-    0x12 => [0x300,-500,0], # \grave (combining)
-    0x13 => [0x301,-500,0], # \acute (combining)
-    0x14 => [0x30C,-500,0], # \check (combining)
-    0x15 => [0x306,-500,0], # \breve (combining)
-    0x16 => [0x304,-500,0], # \bar (combining)
-    0x17 => [0x30A,-613,0], # ring above (combining)
+    0x12 => 0x2CB,          # \grave
+    0x13 => 0x2CA,          # \acute
+    0x14 => 0x2C7,          # \check
+    0x15 => 0x2D8,          # \breve
+    0x16 => 0x2C9,          # \bar
+    0x17 => [0xB0,-113,0],  # \degree
+    0x17 => 0x02DA,         # \r, ring above
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -1371,16 +1348,16 @@ $map{cmssi10} = {
     0x5B => 0x5B,           # [
     0x5C => 0x201C,         # ``
     [0x5D,0x5E] => 0x5D,    # ], ^
-    0x5E => [0x302,-500,0], # \hat (combining)
-    0x5F => [0x307,-389,0], # \dot (combining)
+    0x5E => 0x2C6,          # \hat
+    0x5F => 0x2D9,          # \dot
     0x60 => 0x2018,         # `
     [0x61,0x7A] => 0x61,    # a-z
     [0x7B,0x7C] => 0x2013,  # \endash, \emdash
     0x7B => [0x5F,0,-350],  # underline
-    0x7D => [0x30B,-500,0], # double acute (combining)
+    0x7D => 0x2DD,          # double acute
     0x7E => [0x7E,0,-350],  # ~
-    0x7E => [0x303,-500,0], # \tilde (combining)
-    0x7F => [0x308,-500,0], # \ddot (combining)
+    0x7E => 0x2DC,          # \tilde
+    0x7F => 0xA8,           # \ddot
   ],
 };
 
@@ -1397,12 +1374,12 @@ $map{cmssbx10} = {
 
     0x10 => 0x131,          # \imath (roman)
     0x11 => 0x237,          # \jmath (roman)
-    0x12 => [0x300,-550,0], # \grave (combining)
-    0x13 => [0x301,-550,0], # \acute (combining)
-    0x14 => [0x30C,-550,0], # \check (combining)
-    0x15 => [0x306,-550,0], # \breve (combining)
-    0x16 => [0x304,-550,0], # \bar (combining)
-    0x17 => [0x30A,-608,0], # ring above (combining)
+    0x13 => 0xB4,           # \acute
+    0x14 => 0x2C7,          # \check
+    0x15 => 0x2D8,          # \breve
+    0x16 => 0x2C9,          # \bar
+    0x17 => [0xB0,-58,0],   # \degree
+    0x17 => 0x02DA,         # \r, ring above
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -1415,16 +1392,16 @@ $map{cmssbx10} = {
     0x5B => 0x5B,           # [
     0x5C => 0x201C,         # ``
     [0x5D,0x5E] => 0x5D,    # ], ^
-    0x5E => [0x302,-550,0], # \hat (combining)
-    0x5F => [0x307,-428,0], # \dot (combining)
+    0x5E => 0x2C6,          # \hat
+    0x5F => 0x2D9,          # \dot
     0x60 => 0x2018,         # `
     [0x61,0x7A] => 0x61,    # a-z
     [0x7B,0x7C] => 0x2013,  # \endash, \emdash
     0x7B => [0x5F,0,-350],  # underline
-    0x7D => [0x30B,-550,0], # double acute (combining)
+    0x7D => 0x2DD,          # double acute
     0x7E => [0x7E,0,-350],  # ~
-    0x7E => [0x303,-550,0], # \tilde (combining)
-    0x7F => [0x308,-550,0], # \ddot (combining)
+    0x7E => 0x2DC,          # \tilde
+    0x7F => 0xA8,           # \ddot
   ],
 };
 
@@ -1511,21 +1488,25 @@ $map{cmtt10} = {
 
     0x10 => 0x131,          # \imath (roman)
     0x11 => 0x237,          # \jmath (roman)
-    0x12 => [0x300,-525,0], # \grave (combining)
-    0x13 => [0x301,-525,0], # \acute (combining)
-    0x14 => [0x30C,-525,0], # \check (combining)
-    0x15 => [0x306,-525,0], # \breve (combining)
-    0x16 => [0x304,-525,0], # \bar (combining)
-    0x17 => [0x30A,-525,0], # ring above (combining)
+    0x12 => 0x2CB,          # \grave
+    0x13 => 0x2CA,          # \acute
+    0x14 => 0x2C7,          # \check
+    0x15 => 0x2D8,          # \breve
+    0x16 => 0x2C9,          # \bar
+    0x17 => 0xB0,           # \degree
+    0x17 => 0x02DA,         # \r, ring above
     0x20 => 0x2423,         # graphic representation of space
 
     [0x21,0x7F] => 0x21,
 
     0x60 => 0x2018,         # left quote
     0x27 => 0x2019,         # right quote
-    0x5E => [0x302,-525,0], # \hat (combining)
-    0x7E => [0x303,-525,0], # \tilde (combining)
-    0x7F => [0x308,-525,0], # \ddot (combining)
+    0x5E => 0x2C6,          # \hat
+    0x5F => 0x2D9,          # \dot
+    0x7D => 0x2DD,          # double acute
+    0x7E => [0x7E,0,-350],  # ~
+    0x7E => 0x2DC,          # \tilde
+    0x7F => 0xA8,           # \ddot
   ]
 };
 
@@ -1847,11 +1828,7 @@ $extra{'Main-Regular'} = {
   ],
 
   diacriticals => [
-    'Select(0u2D9)', 'SetRBearing(111,1)',    # \dot
-    'Select(0uB0)',  'SetRBearing(-125,1)',   # ring above
-    'Select(0u2DA)', 'SetRBearing(-125,1)',   # ring above
-    'Select(0u307)', 'SetRBearing(111,1)',    # \dot (combining)
-    'Select(0u30A)', 'SetRBearing(-125,1)',   # ring above (combining)
+    'Select(0uB0)',  'SetRBearing(-125,1)',   # \degree
     'Select(0u20D7)','SetRBearing(153,1)',    # \vec
   ],
 
@@ -2124,19 +2101,14 @@ $extra{'Main-Bold'} = {
   ],
 
   diacriticals => [
-    'Select(0u2D9)', 'SetRBearing(128,1)',    # \dot
-    'Select(0uB0)',  'SetRBearing(-147,1)',   # ring above
-    'Select(0u2DA)', 'SetRBearing(-147,1)',   # ring above
-    'Select(0u307)', 'SetRBearing(128,1)',    # \dot (combining)
-    'Select(0u30A)', 'SetRBearing(-147,1)',   # ring above (combining)
+    'Select(0uB0)',  'SetRBearing(-147,1)',   # \degree
     'Select(0u20D7)','SetRBearing(154,1)',    # \vec
   ],
 };
 
 $extra{'Main-Italic'} = {
   diacriticals => [
-    'Select(0u307)', 'SetRBearing(102,1)',    # \dot (combining)
-    'Select(0u30A)', 'SetRBearing(-160,1)',   # ring above (combining)
+    'Select(0uB0)',  'SetRBearing(-160,1)',   # \degree
   ],
 };
 
@@ -2220,22 +2192,19 @@ $extra{"AMS"} = {
 
 $extra{"SansSerif-Regular"} = {
   diacriticals => [
-    'Select(0u307)', 'SetRBearing(111,1)',   # \dot (combining)
-    'Select(0u30A)', 'SetRBearing(-125,1)',  # ring above (combining)
+    'Select(0uB0)',  'SetRBearing(-142,1)',   # \degree
   ],
 };
 
 $extra{"SansSerif-Italic"} = {
   diacriticals => [
-    'Select(0u307)', 'SetRBearing(111,1)',    # \dot (combining)
-    'Select(0u30A)', 'SetRBearing(-125,1)',   # ring above (combining)
+    'Select(0uB0)',  'SetRBearing(-113,1)',   # \degree
   ],
 };
 
 $extra{"SansSerif-Bold"} = {
   diacriticals => [
-    'Select(0u307)', 'SetRBearing(122,1)',    # \dot (combining)
-    'Select(0u30A)', 'SetRBearing(-125,1)',   # ring above (combining)
+    'Select(0uB0)',  'SetRBearing(-58,1)',   # \degree
   ],
 };
 
