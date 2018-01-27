@@ -20,6 +20,7 @@ used_fonts=(
     KaTeX_Caligraphic-Regular
     KaTeX_Fraktur-Bold
     KaTeX_Fraktur-Regular
+    KaTeX_Greek-Italic
     KaTeX_Main-Bold
     KaTeX_Main-Italic
     KaTeX_Main-Regular
