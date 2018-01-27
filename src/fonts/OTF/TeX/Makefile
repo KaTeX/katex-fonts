@@ -127,7 +127,7 @@ eot: ttf
 		$(TTF2EOT) < ttf/$$file.ttf > eot/$$file.eot; \
 		done
 
-	rm -f eot/*WinChrome* eot/*Greek*
+	rm -f eot/*WinChrome*
 
 svg: ttf
 	mkdir -p svg
@@ -150,7 +150,7 @@ woff: otf ttf
 	mkdir -p woff
 	rm -f woff/*
 	mv ttf/*.woff woff
-	rm -f woff/*WinChrom* woff/*WinIE6* woff/*Greek*
+	rm -f woff/*WinChrom* woff/*WinIE6*
 
 woff2: woff
 	@for file in `ls ttf/*.ttf | $(SED) 's|ttf/\(.*\)\.ttf|\1|'`; do \
@@ -161,7 +161,7 @@ woff2: woff
 	mkdir -p woff2
 	rm -f woff2/*
 	mv ttf/*.woff2 woff2
-	rm -f woff2/*WinChrom* woff2/*WinIE6* woff2/*Greek*
+	rm -f woff2/*WinChrom* woff2/*WinIE6*
 
 css: woff
 	mkdir -p css
