@@ -20,12 +20,13 @@ used_fonts=(
     KaTeX_Caligraphic-Regular
     KaTeX_Fraktur-Bold
     KaTeX_Fraktur-Regular
+    KaTeX_Main-Regular
     KaTeX_Main-Bold
     KaTeX_Main-Italic
-    KaTeX_Main-Regular
-    KaTeX_Math-BoldItalic
-    KaTeX_Math-Italic
+    KaTeX_Main-BoldItalic
     KaTeX_Math-Regular
+    KaTeX_Math-Italic
+    KaTeX_Math-BoldItalic
     KaTeX_SansSerif-Bold
     KaTeX_SansSerif-Italic
     KaTeX_SansSerif-Regular

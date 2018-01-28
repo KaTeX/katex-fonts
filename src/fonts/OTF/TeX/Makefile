@@ -46,6 +46,9 @@ pfa: $(MFTRACE_MODIFIED)
 	@echo "cmbx10"
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify cmbx10
 
+	@echo "cmbxti10"
+	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify cmbxti10
+
 	@echo "cmti10"
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify cmti10
 
