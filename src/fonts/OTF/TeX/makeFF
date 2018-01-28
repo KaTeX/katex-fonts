@@ -297,9 +297,9 @@ $map{cmsy10} = {
     0x74 => 0x2294,         # \sqcup
     0x75 => 0x2293,         # \sqcap
     [0x76,0x77] => 0x2291,  # \sqsubseteq, \sqsupseteq
-
+    0x78 => 0xA7,           # \S
     [0x79,0x7A] => 0x2020,  # \dagger, \ddagger
-
+    0x7B => 0xB6,           # \P
     0x7C => 0x2663,         # \clubsuit
     0x7D => 0x2662,         # \diamondsuit
     0x7E => 0x2661,         # \heartsuit
