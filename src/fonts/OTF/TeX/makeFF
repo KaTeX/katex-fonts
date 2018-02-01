@@ -31,6 +31,7 @@ $map{cmr10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-125,0],  # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -603,6 +604,7 @@ $map{cmti10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-160,0],  # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x23] => 0x21,    # !, ", #,
     0x22 => 0x201D,         # "
@@ -661,6 +663,7 @@ $map{cmbx10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-147,0],  # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -724,6 +727,7 @@ $map{cmbxti10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-160,0],  # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x23] => 0x21,    # !, ", #,
     0x22 => 0x201D,         # "
@@ -1345,6 +1349,7 @@ $map{cmss10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-142,0],  # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -1390,6 +1395,7 @@ $map{cmssi10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-113,0],  # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -1434,6 +1440,7 @@ $map{cmssbx10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-58,0],   # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -1549,6 +1556,7 @@ $map{cmtt10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => 0xB0,           # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
     0x20 => 0x2423,         # graphic representation of space
 
     [0x21,0x7F] => 0x21,
