@@ -60,7 +60,7 @@ def main():
     start_json = json.load(sys.stdin)
 
     for font, chars in metrics_to_extract.iteritems():
-        fontInfo = TTFont("../submodules/katex-fonts/fonts/KaTeX_" + font + ".ttf")
+        fontInfo = TTFont("../../fonts/KaTeX_" + font + ".ttf")
         glyf = fontInfo["glyf"]
         unitsPerEm = float(fontInfo["head"].unitsPerEm)
 

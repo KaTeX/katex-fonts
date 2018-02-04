@@ -15,7 +15,7 @@ There are several requirements for generating the metrics used by KaTeX.
 
 Once you have these things, run
 
-    make metrics
+    sh buildMetrics.sh
 
 which should generate new metrics and place them into `fontMetricsData.json`.
 You're done!
