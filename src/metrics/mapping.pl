@@ -29,6 +29,7 @@ $map{cmr10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-125,0],  # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -435,6 +436,7 @@ $map{cmti10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-160,0],  # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x23] => 0x21,    # !, ", #,
     0x22 => 0x201D,         # "
@@ -489,6 +491,7 @@ $map{cmbx10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-147,0],  # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -541,6 +544,7 @@ $map{cmbxti10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-160,0],  # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x23] => 0x21,    # !, ", #,
     0x22 => 0x201D,         # "
@@ -1037,6 +1041,7 @@ $map{cmtt10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => 0xB0,           # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
     0x20 => 0x2423,         # graphic representation of space
 
     [0x21,0x7F] => 0x21,
@@ -1074,6 +1079,7 @@ $map{cmssbx10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-58,0],   # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -1119,6 +1125,7 @@ $map{cmss10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-142,0],  # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -1164,6 +1171,7 @@ $map{cmssi10} = {
     0x16 => 0x2C9,          # \bar
     0x17 => [0xB0,-113,0],  # \degree
     0x17 => 0x02DA,         # \r, ring above
+    0x18 => 0xB8,           # \c, cedilla
 
     [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
     0x22 => 0x201D,         # "
@@ -1186,50 +1194,6 @@ $map{cmssi10} = {
     0x7E => [0x7E,0,-350],  # ~
     0x7E => 0x2DC,          # \tilde
     0x7F => 0xA8,           # \ddot
-  ],
-};
-
-$map{cmss10} = {
-  "SansSerif-Regular" => [
-    [0,1] => 0x393,         # \Gamma, \Delta
-    2 => 0x398,             # \Theta
-    3 => 0x39B,             # \Lambda
-    4 => 0x39E,             # \Xi
-    5 => 0x3A0,             # \Pi
-    6 => 0x3A3,             # \Sigma
-    [7,8] => 0x3A5,         # \Upsilon, \Phi
-    [9,0xA] => 0x3A8,       # \Psi, \Omega
-
-    0x10 => 0x131,          # \imath (roman)
-    0x11 => 0x237,          # \jmath (roman)
-    0x13 => 0x2CA,          # \acute
-    0x14 => 0x2C7,          # \check
-    0x15 => 0x2D8,          # \breve
-    0x16 => 0x2C9,          # \bar
-    0x17 => 0xB0,           # \degree
-    0x17 => 0x02DA,         # \r, ring above
-
-    [0x21,0x2F] => 0x21,    # !, ", #, $, %, &, ', (, ), *, +, comma, -, ., /
-    0x22 => 0x201D,         # "
-    0x27 => 0x2019,         # '
-    [0x30,0x39] => 0x30,    # 0-9
-    [0x3A,0x3B] => 0x3A,    # :, ;
-    0x3D => 0x3D,           # =
-    [0x3F,0x40] => 0x3F,    # ?, @
-    [0x41,0x5A] => 0x41,    # A-Z
-    0x5B => 0x5B,           # [
-    0x5C => 0x201C,         # ``
-    [0x5D,0x5E] => 0x5D,    # ], ^
-    0x5E => 0x2C6,          # \hat
-    0x5F => 0x2D9,          # \dot
-    0x60 => 0x2018,         # `
-    [0x61,0x7A] => 0x61,    # a-z
-    [0x7B,0x7C] => 0x2013,  # \endash, \emdash
-    0x7B => [0x5F,0,-350],  # underline
-    0x7D => 0x2DD,          # double acute
-    0x7E => [0x7E,0,-350],  # ~
-    0x7E => [0x303,-500,0], # \tilde (combining)
-    0x7F => [0x308,-500,0], # \ddot (combining)
   ],
 };
 
