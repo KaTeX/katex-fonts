@@ -7,11 +7,13 @@ There are several requirements for generating the metrics used by KaTeX.
   this by running `tex --version`, and seeing if it has a line that looks like
   > kpathsea version 6.2.0
 
-- You need the JSON module for perl. You can install this either from CPAN
-  (possibly using the `cpan` command line tool) or with your package manager.
+- You need the Perl module `JSON`. You can install this either from CPAN
+  (e.g. using the `cpan` command line tool: `cpan install JSON`)
+  or with your package manager.
 
-- You need the python module fonttools. You can install this either from PyPi
-  (using `easy_install` or `pip`) or with your package manager.
+- You need the Python module `fonttools`. You can install this either from PyPI
+  (using `easy_install` or `pip`: `pip install fonttools`)
+  or with your package manager.
 
 Once you have these things, run
 
