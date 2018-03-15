@@ -10,7 +10,7 @@ as long as Docker is installed.
 If you want to try out a change
 to [the MathJax-dev repository](https://github.com/Khan/MathJax-dev),
 create a local clone (or download and unpack the ZIP file)
-and specify the path to this directory as an arument to `buildFonts.sh`.
+and specify the path to this directory as an argument to `buildFonts.sh`.
 You can also specify a local or remote tarball,
 e.g. a GitHub download of your own personal feature branch.
 
