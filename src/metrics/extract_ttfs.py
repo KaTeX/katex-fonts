@@ -62,6 +62,7 @@ def main():
     for font, chars in metrics_to_extract.iteritems():
         fontInfo = TTFont("../../fonts/KaTeX_" + font + ".ttf")
         glyf = fontInfo["glyf"]
+        widths = fontInfo.getGlyphSet()
         unitsPerEm = float(fontInfo["head"].unitsPerEm)
 
         # We keep ALL Unicode cmaps, not just fontInfo["cmap"].getcmap(3, 1).
@@ -90,9 +91,9 @@ def main():
             height = depth = italic = skew = width = 0
             glyph = glyf[name]
             if glyph.numberOfContours:
-                height = glyph.yMax
-                depth = -glyph.yMin
-                width = glyph.xMax - glyph.xMin
+                height = glyph.yMax / unitsPerEm
+                depth = -glyph.yMin / unitsPerEm
+            width = widths[name].width / unitsPerEm
             if base_char:
                 base_char_str = str(ord(base_char))
                 base_metrics = start_json[font][base_char_str]
@@ -101,8 +102,8 @@ def main():
                 width = base_metrics["width"]
 
             start_json[font][str(code)] = {
-                "height": height / unitsPerEm,
-                "depth": depth / unitsPerEm,
+                "height": height,
+                "depth": depth,
                 "italic": italic,
                 "skew": skew,
                 "width": width
