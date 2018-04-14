@@ -53,6 +53,10 @@ metrics_to_extract = {
         u"\u222c": u"\u222b",  # \iint, based on \int
         u"\u222d": u"\u222b",  # \iiint, based on \int
     },
+    "Typewriter-Regular": {
+        u"\u0020": None,  # space
+        u"\u00a0": None,  # nbsp
+    },
 }
 
 
