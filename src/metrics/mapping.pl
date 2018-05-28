@@ -204,7 +204,7 @@ $map{cmsy10} = {
     0x33 => 0x220B,         # \ni
     0x34 => 0x25B3,         # \bigtriangleup and \triangle
     0x35 => 0x25BD,         # \bigtriangledown
-    0x36 => [0x338,-778,0], # \not (combining)
+    0x36 => 0x338,          # \not (combining, no negative leading space)
 
     0x38 => 0x2200,         # \forall
     0x39 => 0x2203,         # \exists
@@ -684,7 +684,7 @@ $map{cmbsy10} = {
     0x33 => 0x220B,         # \ni
     0x34 => 0x25B3,         # \bigtriangleup and \triangle
     0x35 => 0x25BD,         # \bigtriangledown
-    0x36 => [0x338,-894,0], # \not (combining)
+    0x36 => 0x338,          # \not (combining, no negative leading space)
 
     0x38 => 0x2200,         # \forall
     0x39 => 0x2203,         # \exists
