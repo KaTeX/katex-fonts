@@ -258,7 +258,7 @@ $map{cmsy10} = {
     0x33 => 0x220B,         # \ni
     0x34 => 0x25B3,         # \bigtriangleup and \triangle
     0x35 => 0x25BD,         # \bigtriangledown
-    0x36 => 0x338,          # \not (combining)
+    0x36 => 0x338,          # \not (combining, no leading negative space)
 
     0x38 => 0x2200,         # \forall
     0x39 => 0x2203,         # \exists
@@ -917,7 +917,7 @@ $map{cmbsy10} = {
     0x33 => 0x220B,         # \ni
     0x34 => 0x25B3,         # \bigtriangleup and \triangle
     0x35 => 0x25BD,         # \bigtriangledown
-    0x36 => 0x338,          # \not (combining)
+    0x36 => 0x338,          # \not (combining, no leading negative space)
 
     0x38 => 0x2200,         # \forall
     0x39 => 0x2203,         # \exists
@@ -2165,6 +2165,18 @@ $extra{'Main-Bold'} = {
   diacriticals => [
     'Select(0uB0)',  'SetRBearing(-147,1)',   # \degree
     'Select(0u20D7)','SetRBearing(154,1)',    # \vec
+  ],
+};
+
+$extra{'Typewriter'} = {
+  space => [
+    'Select(0u20)', 'Clear()',
+    'SetRBearing(525)',
+  ],
+
+  spaceNB => [
+    'Select(0uA0)', 'Clear()',
+    'SetRBearing(525)',
   ],
 };
 
