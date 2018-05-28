@@ -2170,12 +2170,12 @@ $extra{'Main-Bold'} = {
 
 $extra{'Typewriter'} = {
   space => [
-    'Select(0u20)', 'Clear()',
+    'Select(0u20)','Clear()',
     'SetRBearing(525)',
   ],
 
   spaceNB => [
-    'Select(0uA0)', 'Clear()',
+    'Select(0uA0)','Clear()',
     'SetRBearing(525)',
   ],
 };
