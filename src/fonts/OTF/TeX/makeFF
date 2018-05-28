@@ -2168,25 +2168,11 @@ $extra{'Main-Bold'} = {
   ],
 };
 
-$extra{'Typewriter'} = {
-  space => [
-    'Select(0u20)','Clear()',
-    'SetRBearing(525)',
-  ],
-
-  spaceNB => [
-    'Select(0uA0)','Clear()',
-    'SetRBearing(525)',
-  ],
-};
-
 $extra{'Main-Italic'} = {
   diacriticals => [
     'Select(0uB0)',  'SetRBearing(-160,1)',   # \degree
   ],
-};
 
-$extra{'Math-Italic'} = {
   not => [
     'Select(0u2F)',
     'SetRBearing(778,1)',
@@ -2261,6 +2247,18 @@ $extra{"AMS"} = {
    'Select(0u2192)','Copy()',
    'Select(0u21E2)','PasteWithOffset(834,0)',
    'SetRBearing(834,1)',
+  ],
+};
+
+$extra{'Typewriter'} = {
+  space => [
+    'Select(0u20)','Clear()',
+    'SetRBearing(525)',
+  ],
+
+  spaceNB => [
+    'Select(0uA0)','Clear()',
+    'SetRBearing(525)',
   ],
 };
 
