@@ -121,24 +121,6 @@ ttf: ff
 		done
 
 	./fix_os2_metrics.rb ttf/
-eot: ttf
-	mkdir -p eot
-	rm -f eot/*
-
-	@for file in `ls ttf/*.ttf | $(SED) 's|ttf/\(.*\)\.ttf|\1|'`; do \
-		echo "Generating $$file.eot..."; \
-		$(TTF2EOT) < ttf/$$file.ttf > eot/$$file.eot; \
-		done
-
-svg: ttf
-	mkdir -p svg
-	rm -f svg/*
-
-	@for file in `ls ttf/*.ttf | $(SED) 's|ttf/\(.*\)\.ttf|\1|'`; do \
-		echo "Generating $$file.svg..."; \
-		$(JAVA) -jar $(TTF2SVG) ttf/$$file.ttf \
-		-id $$file -o svg/$$file.svg -l 0 -h 65535; \
-		done
 
 woff: otf ttf
 	@for file in `ls ttf/*.ttf | $(SED) 's|ttf/\(.*\)\.ttf|\1|'`; do \
@@ -162,8 +144,8 @@ woff2: woff
 
 OTFandTTF: ttf
 
-fonts: OTFandTTF eot svg woff
+fonts: OTFandTTF woff woff2
 
 clean:
 	rm -f $(MFTRACE_MODIFIED) lib/blacker.mf
-	rm -rf pfa ff otf ttf eot svg woff
+	rm -rf pfa ff otf ttf woff
