@@ -166,21 +166,9 @@ woff2: woff
 	mv ttf/*.woff2 woff2
 	rm -f woff2/*WinChrom* woff2/*WinIE6* woff2/*Greek*
 
-css: woff
-	mkdir -p css
-	rm -f css/*
-
-	@for file in `ls woff/*.woff | $(SED) 's|woff/\(.*\)\.woff|\1|'`; do \
-		echo "Generating $$file.css..."; \
-		$(PERL) woff2css $$file > css/$$file.css; \
-		end
-
-	$(PERL) css2all css/*.css > KaTeX-All.css
-	mv KaTeX-All.css css
-
 OTFandTTF: ttf
 
-fonts: OTFandTTF eot svg woff # css
+fonts: OTFandTTF eot svg woff
 
 install:
         #Copy the font files into the system font directory
@@ -194,13 +182,11 @@ install:
 	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/eot/*.*
 	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/svg/*.*
 	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/woff/*.*
-        #rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/css/*.*
 	cp `ls otf/*.otf | $(GREP) -v 'Greek'` $(MATHJAXDIR)/fonts/HTML-CSS/TeX/otf
 	cp eot/*.eot $(MATHJAXDIR)/fonts/HTML-CSS/TeX/eot
 	cp svg/*.svg $(MATHJAXDIR)/fonts/HTML-CSS/TeX/svg
 	cp woff/*.woff $(MATHJAXDIR)/fonts/HTML-CSS/TeX/woff
-        #cp css/*.css $(MATHJAXDIR)/fonts/HTML-CSS/TeX/css
 
 clean:
 	rm -f $(MFTRACE_MODIFIED) lib/blacker.mf
-	rm -rf pfa ff otf ttf eot svg woff css
+	rm -rf pfa ff otf ttf eot svg woff
