@@ -112,7 +112,7 @@ ttf: ff
 
 	@for file in `ls ttf/*.ttf`; do \
 		echo "hinting $$file"; \
-		if echo "$$file" | $(GREP) -q -e "Greek" -e "Size[1-4]" -e "Typewriter" -e "Win"; then \
+		if echo "$$file" | $(GREP) -q -e "Size[1-4]" -e "Typewriter"; then \
 			$(TTFAUTOHINT) --windows-compatibility --symbol $$file $$file.hinted; \
 		else \
 			$(TTFAUTOHINT) --windows-compatibility $$file $$file.hinted; \
@@ -130,8 +130,6 @@ eot: ttf
 		$(TTF2EOT) < ttf/$$file.ttf > eot/$$file.eot; \
 		done
 
-	rm -f eot/*WinChrome* eot/*Greek*
-
 svg: ttf
 	mkdir -p svg
 	rm -f svg/*
@@ -142,8 +140,6 @@ svg: ttf
 		-id $$file -o svg/$$file.svg -l 0 -h 65535; \
 		done
 
-	rm -f svg/*WinIE6* svg/*Greek*
-
 woff: otf ttf
 	@for file in `ls ttf/*.ttf | $(SED) 's|ttf/\(.*\)\.ttf|\1|'`; do \
 		echo "Generating $$file.woff..."; \
@@ -153,7 +149,6 @@ woff: otf ttf
 	mkdir -p woff
 	rm -f woff/*
 	mv ttf/*.woff woff
-	rm -f woff/*WinChrom* woff/*WinIE6* woff/*Greek*
 
 woff2: woff
 	@for file in `ls ttf/*.ttf | $(SED) 's|ttf/\(.*\)\.ttf|\1|'`; do \
@@ -164,7 +159,6 @@ woff2: woff
 	mkdir -p woff2
 	rm -f woff2/*
 	mv ttf/*.woff2 woff2
-	rm -f woff2/*WinChrom* woff2/*WinIE6* woff2/*Greek*
 
 OTFandTTF: ttf
 
@@ -173,16 +167,14 @@ fonts: OTFandTTF eot svg woff
 install:
         #Copy the font files into the system font directory
         #rm -f $FONTDIR/KaTeX_*
-	cp `ls otf/*.otf | $(GREP) -v 'Greek'` $(FONTDIR)
-        # echo `ls ttf/*.ttf | $(GREP) -Ev 'WinChro|WinIE6'`
-	cp ttf/*Greek*.ttf $(FONTDIR)
+	cp otf/*.otf $(FONTDIR)
 
         #  Put the fonts into the KaTeX fonts folder
 	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/otf/*.*
 	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/eot/*.*
 	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/svg/*.*
 	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/woff/*.*
-	cp `ls otf/*.otf | $(GREP) -v 'Greek'` $(MATHJAXDIR)/fonts/HTML-CSS/TeX/otf
+	cp otf/*.otf $(MATHJAXDIR)/fonts/HTML-CSS/TeX/otf
 	cp eot/*.eot $(MATHJAXDIR)/fonts/HTML-CSS/TeX/eot
 	cp svg/*.svg $(MATHJAXDIR)/fonts/HTML-CSS/TeX/svg
 	cp woff/*.woff $(MATHJAXDIR)/fonts/HTML-CSS/TeX/woff
