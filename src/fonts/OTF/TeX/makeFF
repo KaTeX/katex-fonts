@@ -6,7 +6,6 @@
 #
 #  Usage:  ./makeFF
 
-require "lib/skew.pl";
 require "../../../custom.cfg.pl";
 
 #########################################################################
@@ -2338,24 +2337,6 @@ $style{BoldItalic} = [
 
 #########################################################################
 
-sub checkSkew {
-  my ($cmfont,$mjfont,$item,$remap) = @_;
-  return unless $skew{$cmfont};
-  if (ref($remap) eq "ARRAY") {$remap = $remap->[0]}
-  if (ref($item) eq "ARRAY") {
-    foreach $n ($item->[0]...$item->[1]) {
-      if ($skew{$cmfont}{$n}) {
-	$m = $remap + ($n - $item->[0]);
-	$SKEW{$mjfont}{$m} = $skew{$cmfont}{$n};
-      }
-    }
-  } else {
-    if ($skew{$cmfont}{$item}) {$SKEW{$mjfont}{$remap} = $skew{$cmfont}{$item}}
-  }
-}
-
-#########################################################################
-
 foreach $cmfont (sort (keys %map)) {
   print "Reading $cmfont...\n";
   foreach $mjfont (keys %{$map{$cmfont}}) {
@@ -2386,7 +2367,6 @@ foreach $cmfont (sort (keys %map)) {
     @remap = @{$map{$cmfont}{$mjfont}};
     while (defined($item = shift(@remap))) {
       $remap = shift(@remap);
-      checkSkew($cmfont,$mjfont,$item,$remap);
       push(@$script,'Open("pfa/'.$cmfont.'.pfa")');
       if (ref($item) eq "ARRAY") {
 	push(@$script,'Select('.sprintf("%d,%d",@$item).')');
@@ -2440,24 +2420,6 @@ foreach $font (sort keys %script) {
 		    'SelectAll()','AutoInstr()',
                     'Generate("ttf/KaTeX_'.$family.'.ttf")'),"\n";
   close(SCRIPT);
-}
-
-#
-#  Write skew data
-#
-open(SKEWFILE,">skew.js");
-foreach $mjfont (sort(keys %SKEW)) {
-  next if $mjfont eq "Math-Regular";
-  $name = "KaTeX_$mjfont";
-  $name =~ s/-Regular//; $name =~ s/BoldItalic/Bold-Italic/;
-  $name =~ s/-I/-i/; $name =~ s/-B/-b/;
-  print SKEWFILE "  HTMLCSS.FONTDATA.FONTS['$name'].skew = {";
-  $comma = "";
-  foreach $n (sort {$a <=> $b} (keys %{$SKEW{$mjfont}})) {
-    print SKEWFILE "$comma\n    ",sprintf("0x%X",$n),": $SKEW{$mjfont}{$n}";
-    $comma = ",";
-  }
-  print SKEWFILE "\n  };\n\n";
 }
 
 1;
