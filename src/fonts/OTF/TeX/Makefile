@@ -21,7 +21,7 @@ include ../../../custom.cfg
 
 MFTRACE_MODIFIED=lib/mftrace-modified
 
-all: fonts install
+all: fonts
 
 blacker: $(MFTRACE_MODIFIED)
 $(MFTRACE_MODIFIED):
@@ -163,21 +163,6 @@ woff2: woff
 OTFandTTF: ttf
 
 fonts: OTFandTTF eot svg woff
-
-install:
-        #Copy the font files into the system font directory
-        #rm -f $FONTDIR/KaTeX_*
-	cp otf/*.otf $(FONTDIR)
-
-        #  Put the fonts into the KaTeX fonts folder
-	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/otf/*.*
-	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/eot/*.*
-	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/svg/*.*
-	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/woff/*.*
-	cp otf/*.otf $(MATHJAXDIR)/fonts/HTML-CSS/TeX/otf
-	cp eot/*.eot $(MATHJAXDIR)/fonts/HTML-CSS/TeX/eot
-	cp svg/*.svg $(MATHJAXDIR)/fonts/HTML-CSS/TeX/svg
-	cp woff/*.woff $(MATHJAXDIR)/fonts/HTML-CSS/TeX/woff
 
 clean:
 	rm -f $(MFTRACE_MODIFIED) lib/blacker.mf
