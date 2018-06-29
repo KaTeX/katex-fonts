@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    machine: true
+
+    steps:
+      - checkout
+
+      - run:
+          name: Login to Docker
+          command: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+
+      - run:
+          name: Build Docker image
+          command: docker build -t $DOCKER_USERNAME/katex-fonts:$(openssl sha1 Dockerfile | tail -c 9) .
+
+      - run:
+          name: Push Docker image
+          command: docker push $DOCKER_USERNAME/katex-fonts
