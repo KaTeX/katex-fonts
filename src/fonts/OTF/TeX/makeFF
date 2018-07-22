@@ -1686,25 +1686,23 @@ $extra{'Main-Regular'} = {
     'SetRBearing(778,1)',
   ],
 
-  notin => [
-    'Select(0u2208)','Copy()',
-    'Select(0u2209)','Paste()',
-    'Select(0u338)','Copy()',
-    'Select(0u2209)',
-#    'PasteWithOffset(-55,0)',
-    'PasteWithOffset(723,0)',
-    'RemoveOverlap()',
-  ],
+  #notin => [
+  #  'Select(0u2208)','Copy()',
+  #  'Select(0u2209)','Paste()',
+  #  'Select(0u338)','Copy()',
+  #  'Select(0u2209)',
+  #  'PasteWithOffset(-55,0)',
+  #  'RemoveOverlap()',
+  #],
 
-  noteq => [
-    'Select(0u3D)','Copy()',
-    'Select(0u2260)','Paste()',
-    'Select(0u338)','Copy()',
-    'Select(0u2260)',
-#    'PasteWithOffset(0,0)',
-    'PasteWithOffset(778,0)',
-    'RemoveOverlap()',
-  ],
+  #noteq => [
+  #  'Select(0u3D)','Copy()',
+  #  'Select(0u2260)','Paste()',
+  #  'Select(0u338)','Copy()',
+  #  'Select(0u2260)',
+  #  'PasteWithOffset(0,0)',
+  #  'RemoveOverlap()',
+  #],
 
   longleftarrow => [
     'Select(0u2190)','Copy()',
