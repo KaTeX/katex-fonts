@@ -111,16 +111,16 @@ ttf: ff
 		done
 
 	@for file in `ls ttf/*.ttf`; do \
-		echo "hinting $$file"; \
+		echo "hinting $$file and fixing metrics"; \
 		if echo "$$file" | $(GREP) -q -e "Greek" -e "Size[1-4]" -e "Typewriter" -e "Win"; then \
 			$(TTFAUTOHINT) --windows-compatibility --symbol $$file $$file.hinted; \
 		else \
 			$(TTFAUTOHINT) --windows-compatibility $$file $$file.hinted; \
 		fi; \
 		mv $$file.hinted $$file; \
+		./fix_os2_metrics.py $$file; \
 		done
 
-	./fix_os2_metrics.rb ttf/
 eot: ttf
 	mkdir -p eot
 	rm -f eot/*

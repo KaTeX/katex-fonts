@@ -22,14 +22,12 @@ RUN apt-get update \
     unzip \
     zlib1g-dev \
     python-fontforge \
-    ruby \
     woff-tools \
     pkg-config \
     libharfbuzz-dev \
     libfreetype6-dev \
  && apt-get clean \
- && rm -rf /var/lib/apt/lists/* \
- && gem install ttfunk --version 1.1.1
+ && rm -rf /var/lib/apt/lists/*
 
 # Download yuicompressor
 ADD https://github.com/yui/yuicompressor/releases/download/v2.4.8/yuicompressor-2.4.8.jar /usr/share/yui-compressor/yui-compressor.jar
