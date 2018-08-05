@@ -17,7 +17,8 @@ metrics_to_extract = {
         # from the same font with correct italic and skew metrics. A character
         # maps to None if it doesn't have a base.
 
-        u"\u2260": None,  # \neq
+        #u"\u2209": None,  # \notin
+        #u"\u2260": None,  # \neq
         u"\u2245": None,  # \cong
         u"\u0020": None,  # space
         u"\u00a0": None,  # nbsp
