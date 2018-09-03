@@ -27,12 +27,6 @@ help:
 	@echo "make config"
 	@echo "  Generate the Perl configuration"
 	@echo ""
-	@echo "make fonts"
-	@echo "  Generate and install MathJax fonts and related data."
-	@echo ""
-	@echo "make pack"
-	@echo "  Run MathJax packer"
-	@echo ""
 	@echo "make clean"
 	@echo "  Remove temporary directories and files."
 	@echo ""
@@ -53,14 +47,5 @@ $(CUSTOM).pl: $(CUSTOM)
 
 config: $(CUSTOM).pl
 
-fonts: $(CUSTOM).pl
-	$(MAKE) -C fonts all
-
-pack: $(CUSTOM).pl
-	$(MAKE) -C packer all
-
 clean:
 	rm -f $(CUSTOM).pl
-	$(MAKE) -C fonts clean
-
-.PHONY: fonts

@@ -6,7 +6,6 @@
 #
 #  Usage:  ./makeFF
 
-require "lib/skew.pl";
 require "../../../custom.cfg.pl";
 
 #########################################################################
@@ -61,17 +60,6 @@ $map{cmr10} = {
     0x1D => 0xC6,           # AE ligature
     0x1E => 0x152,          # OE ligature
     0x1F => 0xD8,           # O with slash
-  ],
-
-  "Greek" => [
-    [0,1] => 0x393,         # \Gamma, \Delta
-    2 => 0x398,             # \Theta
-    3 => 0x39B,             # \Lambda
-    4 => 0x39E,             # \Xi
-    5 => 0x3A0,             # \Pi
-    6 => 0x3A3,             # \Sigma
-    [7,8] => 0x3A5,         # \Upsilon, \Phi
-    [9,0xA] => 0x3A8,       # \Psi, \Omega
   ],
 };
 
@@ -165,48 +153,6 @@ $map{cmmi10} = {
     0x7D => 0x2118,         # \wp
     0x7E => [0x20D7,-653,0],# \vec
   ],
-
-  "Greek-Italic" => [
-    [0,1] => 0x393,         # \Gamma, \Delta
-    2 => 0x398,             # \Theta
-    3 => 0x39B,             # \Lambda
-    4 => 0x39E,             # \Xi
-    5 => 0x3A0,             # \Pi
-    6 => 0x3A3,             # \Sigma
-    [7,8] => 0x3A5,         # \Upsilon, \Phi
-    [9,0xA] => 0x3A8,       # \Psi, \Omega
-
-    [0xB,0xE] => 0x3B1,     # \alpha, \beta, \gamma, \delta
-    0xF => 0x3F5,           # \elpsilon
-    [0x10,0x18] => 0x3B6,   # \zeta, \eta, \theta, \iota, \kappa, \lambda, \mu, \nu, \xi
-    [0x19,0x1A] => 0x3C0,   # \pi, \rho
-    [0x1B,0x1D] => 0x3C3,   # \sigma, \tau, \upsilon
-    0x1E => 0x3D5,          # \phi
-    [0x1F,0x21] => 0x3C7,   # \chi, \psi, \omega
-    0x22 => 0x3B5,          # \varepsilon
-    0x23 => 0x3D1,          # \vartheta
-    0x24 => 0x3D6,          # \varpi
-    0x25 => 0x3F1,          # \varrho
-    0x26 => 0x3C2,          # \varsigma
-    0x27 => 0x3C6,          # \varphi
-
-    0x6F => 0x3BF,          # omicron
-  ],
-
-  "WinChrome" => [
-    0x3E => 0x3E,           # > not accessible in Chrome
-  ],
-
-  "WinIE6" => [
-    0x40 => 0xE20D,         # \partial
-    0x3D => 0xE212,         # /
-    [0x5B,0x5D] => 0xE234,  # \flat, \natural, \sharp
-  ],
-
-#  #  Windows FF2 can't access Caligraphic font?
-#  "WinFF2" => [
-#    [0x30,0x39] => 0xE050,    # Oldstyle 0-9
-#  ]
 };
 
 $map{cmsy10} = {
@@ -314,60 +260,6 @@ $map{cmsy10} = {
   "Caligraphic" => [
     [0x41,0x5A] => 0x41,    # A-Z
   ],
-
-  "WinChrome" => [
-    0x54 => 0x54,           # Caligraphic T is not accessible in Chrome?
-  ],
-
-  "WinIE6" => [
-    0x20 => 0xE200,         # \leftarrow
-    0x22 => 0xE201,         # \uparrow
-    0x21 => 0xE202,         # \rightarrow
-    0x23 => 0xE203,         # \downarrow
-    0x24 => 0xE204,         # \leftrightarrow
-    0x6C => 0xE205,         # \updownarrow
-    0x2D => 0xE206,         # \nwarrow
-    0x25 => 0xE207,         # \nearrow
-    0x26 => 0xE208,         # \searrow
-    0x2E => 0xE209,         # \swarrow
-    0x29 => 0xE20A,         # \Rightarrow
-    0x2C => 0xE20B,         # \Leftrightarrow
-    0x38 => 0xE20C,         # \forall
-    0x39 => 0xE20E,         # \exists
-    0x72 => 0xE20F,         # \nabla
-    0x32 => 0xE210,         # \in
-    0x33 => 0xE211,         # \ni
-    0x70 => [0xE213,0,760], # \surd    ### adjust position so font doesn't have a large depth
-    0x2F => 0xE214,         # \propto
-    0x31 => 0xE215,         # \infty
-    0x6A => 0xE217,         # \vert
-    0x6B => 0xE218,         # \Vert
-    [0x5E,0x5F] => 0xE219,  # \wedge, \vee
-    0x5C => 0xE21B,         # \cap
-    0x5B => 0xE21C,         # \cup
-    0x73 => 0xE21D,         # \int
-    [0x18,0x19] => 0xE21E,  # \sim, \approx
-          # 0xE220          # \neq
-    0x11 => 0xE221,         # \equiv
-    [0x14,0x15] => 0xE222,  # \leq, \geq
-    [0x1C,0x1D] => 0xE224,  # \ll, \gg
-    [0x1A,0x1B] => 0xE226,  # \subset, \supset
-    [0x12,0x13] => 0xE228,  # \subseteq, \supseteq
-    8 => 0xE22A,            # \oplus
-    0xC => 0xE22B,          # \odot
-    0x3F => 0xE22C,         # \bot
-    0x34 => 0xE22D,         # \bigtriangleup
-    0x35 => 0xE22E,         # \bigtriangledown
-    0xD => 0xE22F,          # \bigcirc
-    0x7F => 0xE230,         # \spadesuit
-    0x7E => 0xE231,         # \heartsuit
-    0x7D => 0xE232,         # \diamondsuit
-    0x7C => 0xE233,         # \clubsuit
-  ],
-
-#  "WinFF2" => [
-#    [0x41,0x5A] => 0xE061,    # A-Z
-#  ],
 };
 
 $map{cmex10} = {
@@ -524,64 +416,6 @@ $map{cmex10} = {
     0x76 => [0xE001,0,565], # radical top (PUA)
     [0x7A,0x7D] => 0xE150,  # \braceld, \bracerd, \bracelu, \braceru (PUA)
   ],
-
-  "WinChrome" => [
-    0x35 => [0x23A6,0,1115],# Size4 right-square-bracket-lower-hook not accessible?
-    0x4B => [0x2A00,0,950], # Size2 \bigodot not accessible in Chrome?
-    0x53 => [0x22C3,0,750], # Size1 \bigcup not accessible in Chrome?
-  ],
-
-  "WinIE6" => [
-    # Size1
-    0x51 => 0xE280,         # \prod
-    0x50 => 0xE281,         # \sum
-    0x70 => 0xE282,         # surd
-    0xC  => 0xE283,         # \vert
-    0xD  => 0xE284,         # \Vert
-    0x52 => 0xE285,         # \int
-    0x48 => 0xE286,         # \oint
-    0x78 => 0xE287,         # uparrow top
-    0x79 => 0xE288,         # downarrow bottom
-    0x3F => 0xE289,         # arrow extension
-
-    # Size2
-    0x59 => 0xE290,         # \prod
-    0x58 => 0xE291,         # \sum
-    0x71 => 0xE292,         # surd
-    0x5A => 0xE295,         # \int
-    0x49 => 0xE296,         # \oint
-
-    # Size3
-    0x72 => 0xE2A2,         # surd
-
-    # Size4
-    0x73 => 0xE2B2,         # surd
-  ]
-
-#  # FF2 on Windows can't access Basic Latin in larger sizes
-#  "WinFF2" => [
-#    # Size1
-#    [0,3] => 0xE010,        # (,),[,]
-#    [8,9] => 0xE014,        # {,}
-#    [0xE,0xF] => 0xE016,    # /,\
-#
-#    # Size2
-#    [0x10,0x11] => 0xE020,  # (,)
-#    [0x2E,0x2F] => 0xE026,  # /,\
-#    [0x68,0x69] => 0xE022,  # [,]
-#    [0x6E,0x6F] => 0xE024,  # {,}
-#
-#    # Size3
-#    [0x12,0x15] => 0xE030,  # (,),[,]
-#    [0x1A,0x1B] => 0xE034,  # {,}
-#    [0x1E,0x1F] => 0xE036,  # /,\
-#
-#    # Size4
-#    [0x20,0x23] => 0xE040,  # (,),[,]
-#    [0x28,0x29] => 0xE044,  # {,}
-#    [0x2C,0x2D] => 0xE046,  # /,\
-#  ]
-
 };
 
 $map{cmti10} = {
@@ -637,10 +471,6 @@ $map{cmti10} = {
     0x1E => 0x152,          # OE ligature
     0x1F => 0xD8,           # O with slash
   ],
-
-  "WinChrome" => [
-    0x64 => 0x64,           # Italic d is not accessible in Chrome?
-  ],
 };
 
 $map{cmbx10} = {
@@ -693,17 +523,6 @@ $map{cmbx10} = {
     0x1D => 0xC6,           # AE ligature
     0x1E => 0x152,          # OE ligature
     0x1F => 0xD8,           # O with slash
-  ],
-
-  "Greek-Bold" => [
-    [0,1] => 0x393,         # \Gamma, \Delta
-    2 => 0x398,             # \Theta
-    3 => 0x39B,             # \Lambda
-    4 => 0x39E,             # \Xi
-    5 => 0x3A0,             # \Pi
-    6 => 0x3A3,             # \Sigma
-    [7,8] => 0x3A5,         # \Upsilon, \Phi
-    [9,0xA] => 0x3A8,       # \Psi, \Omega
   ],
 };
 
@@ -824,48 +643,6 @@ $map{cmmib10} = {
     0x7D => 0x2118,         # \wp
     0x7E => [0x20D7,-729,0],# \vec
   ],
-
-  "Greek-BoldItalic" => [
-    [0,1] => 0x393,         # \Gamma, \Delta
-    2 => 0x398,             # \Theta
-    3 => 0x39B,             # \Lambda
-    4 => 0x39E,             # \Xi
-    5 => 0x3A0,             # \Pi
-    6 => 0x3A3,             # \Sigma
-    [7,8] => 0x3A5,         # \Upsilon, \Phi
-    [9,0xA] => 0x3A8,       # \Psi, \Omega
-
-    [0xB,0xE] => 0x3B1,     # \alpha, \beta, \gamma, \delta
-    0xF => 0x3F5,           # \elpsilon
-    [0x10,0x18] => 0x3B6,   # \zeta, \eta, \theta, \iota, \kappa, \lambda, \mu, \nu, \xi
-    [0x19,0x1A] => 0x3C0,   # \pi, \rho
-    [0x1B,0x1D] => 0x3C3,   # \sigma, \tau, \upsilon
-    0x1E => 0x3D5,          # \phi
-    [0x1F,0x21] => 0x3C7,   # \chi, \psi, \omega
-    0x22 => 0x3B5,          # \varepsilon
-    0x23 => 0x3D1,          # \vartheta
-    0x24 => 0x3D6,          # \varpi
-    0x25 => 0x3F1,          # \varrho
-    0x26 => 0x3C2,          # \varsigma
-    0x27 => 0x3C6,          # \varphi
-
-    0x6F => 0x3BF,          # omicron
-  ],
-
-  "WinChrome" => [
-    0x3E => 0xE2F1,         # bold > not accessible in Chrome
-  ],
-
-  "WinIE6" => [
-    0x40 => 0xE24D,         # \partial
-    0x3D => 0xE252,         # /
-    [0x5B,0x5D] => 0xE274,  # \flat, \natural, \sharp
-  ],
-
-#  #  Windows FF2 can't access Caligraphic font?
-#  "WinFF2" => [
-#    [0x30,0x39] => 0xE080,    # Oldstyle 0-9
-#  ]
 };
 
 $map{cmbsy10} = {
@@ -973,60 +750,6 @@ $map{cmbsy10} = {
   "Caligraphic-Bold" => [
     [0x41,0x5A] => 0x41,    # A-Z
   ],
-
-  "WinIE6" => [
-    0x20 => 0xE240,         # \leftarrow
-    0x22 => 0xE241,         # \uparrow
-    0x21 => 0xE242,         # \rightarrow
-    0x23 => 0xE243,         # \downarrow
-    0x24 => 0xE244,         # \leftrightarrow
-    0x6C => 0xE245,         # \updownarrow
-    0x2D => 0xE246,         # \nwarrow
-    0x25 => 0xE247,         # \nearrow
-    0x26 => 0xE248,         # \searrow
-    0x2E => 0xE249,         # \swarrow
-    0x29 => 0xE24A,         # \Rightarrow
-    0x2C => 0xE24B,         # \Leftrightarrow
-    0x38 => 0xE24C,         # \forall
-    0x39 => 0xE24E,         # \exists
-    0x72 => 0xE24F,         # \nabla
-    0x32 => 0xE250,         # \in
-    0x33 => 0xE251,         # \ni
-    0x70 => [0xE253,0,760], # \surd    ### adjust position so font doesn't have a large depth
-    0x2F => 0xE254,         # \propto
-    0x31 => 0xE255,         # \infty
-    0x6A => 0xE257,         # \vert
-    0x6B => 0xE258,         # \Vert
-    [0x5E,0x5F] => 0xE259,  # \wedge, \vee
-    0x5C => 0xE25B,         # \cap
-    0x5B => 0xE25C,         # \cup
-    0x73 => 0xE25D,         # \int
-    [0x18,0x19] => 0xE25E,  # \sim, \approx
-          # 0xE260          # \neq
-    0x11 => 0xE261,         # \equiv
-    [0x14,0x15] => 0xE262,  # \leq, \geq
-    [0x1C,0x1D] => 0xE264,  # \ll, \gg
-    [0x1A,0x1B] => 0xE266,  # \subset, \supset
-    [0x12,0x13] => 0xE268,  # \subseteq, \supseteq
-    8 => 0xE26A,            # \oplus
-    0xC => 0xE26B,          # \odot
-    0x3F => 0xE26C,         # \bot
-    0x34 => 0xE26D,         # \bigtriangleup
-    0x35 => 0xE26E,         # \bigtriangledown
-    0xD => 0xE26F,          # \bigcirc
-    0x7F => 0xE270,         # \spadesuit
-    0x7E => 0xE271,         # \heartsuit
-    0x7D => 0xE272,         # \diamondsuit
-    0x7C => 0xE273,         # \clubsuit
-  ],
-
-  "WinChrome" => [
-    0x54 => 0xE2F0,         # Caligraphic T is not accessible in Chrome? (PUA)
-  ],
-
-#  "WinFF2-Bold" => [
-#    [0x41,0x5A] => 0xE091,    # A-Z
-#  ],
 };
 
 $map{msam10} = {
@@ -1168,33 +891,6 @@ $map{msam10} = {
     0x7E => 0x229B,         # \circledast
     0x7F => 0x229D,         # \circleddash
   ],
-
-  "WinIE6" => [
-    0x5C => 0xE216,         # \angle
-          # 0xE256,         # \angle (bold)
-    0x4B => 0xE2C0,         # rightarrow
-    0x4C => 0xE2C1,         # leftarrow
-    0x35 => 0xE2C5,         # \leqq
-    0x3D => 0xE2C6,         # \geqq
-    0x70 => 0xE2CA,         # \ulcorner
-    0x71 => 0xE2CB,         # \urcorner
-    0x78 => 0xE2CC,         # \llcorner
-    0x79 => 0xE2CD,         # \lrcorner
-    0x04 => 0xE2D0,         # \blacksquare
-    0x03 => 0xE2D1,         # \square
-    0x4E => 0xE2D2,         # \blacktriangle
-    0x4D => 0xE2D3,         # \vartriangle
-    0x49 => 0xE2D4,         # \blacktriangleright
-    0x48 => 0xE2D5,         # \blacktriangledown
-    0x4F => 0xE2D6,         # \triangledown
-    0x4A => 0xE2D7,         # \blacktriangleleft
-    0x06 => 0xE2D8,         # \lozenge
-    0x29 => 0xE2D9,         # \therefore
-    0x2A => 0xE2DA,         # \because
-    0x3B => 0xE2DB,         # \fallingdotseq
-    0x46 => 0xE2DC,         # \bigstar
-    0x76 => 0xE2DD,         # \backsim
-  ],
 };
 
 $map{msbm10} = {
@@ -1316,16 +1012,6 @@ $map{msbm10} = {
     0x7D => 0x210F,         # \hslash
     0x7E => 0x0127,         # \hbar
     0x7F => 0x220D,         # \backepsilon
-  ],
-
-  "WinIE6" => [
-    0x70 => 0xE2C2,         # \shortmid
-    0x71 => 0xE2C3,         # \shortparallel
-    0x73 => 0xE2C4,         # \thicksim
-    0x04 => 0xE2C7,         # \nless
-    0x05 => 0xE2C8,         # \ngtr
-    0x1E => 0xE2CE,         # \diagup
-    0x1F => 0xE2CF,         # \diagdown
   ],
 };
 
@@ -2278,32 +1964,6 @@ $extra{"SansSerif-Bold"} = {
   ],
 };
 
-$extra{"WinIE6"} = {
-  neq => [
-    'Generate("otf/KaTeX_WinIE6-Regular.otf")',
-    'Open("otf/KaTeX_Main-Regular.otf")',
-    'Select(0u2260)','Copy()',
-    'Open("otf/KaTeX_WinIE6-Regular.otf")',
-    'Select(0uE220)','Paste()'
-  ],
-
-  neq_bold => [
-    'Generate("otf/KaTeX_WinIE6-Regular.otf")',
-    'Open("otf/KaTeX_Main-Bold.otf")',
-    'Select(0u2260)','Copy()',
-    'Open("otf/KaTeX_WinIE6-Regular.otf")',
-    'Select(0uE260)','Paste()'
-  ],
-
-  angle_bold => [
-    'Generate("otf/KaTeX_WinIE6-Regular.otf")',
-    'Open("otf/KaTeX_Main-Bold.otf")',
-    'Select(0u2220)','Copy()',
-    'Open("otf/KaTeX_WinIE6-Regular.otf")',
-    'Select(0uE256)','Paste()'
-  ]
-};
-
 #########################################################################
 
 $style{Regular} = [
@@ -2333,24 +1993,6 @@ $style{BoldItalic} = [
   'PasteWithOffset(800,0)',
   'SetRBearing(800,1)'
 ];
-
-#########################################################################
-
-sub checkSkew {
-  my ($cmfont,$mjfont,$item,$remap) = @_;
-  return unless $skew{$cmfont};
-  if (ref($remap) eq "ARRAY") {$remap = $remap->[0]}
-  if (ref($item) eq "ARRAY") {
-    foreach $n ($item->[0]...$item->[1]) {
-      if ($skew{$cmfont}{$n}) {
-	$m = $remap + ($n - $item->[0]);
-	$SKEW{$mjfont}{$m} = $skew{$cmfont}{$n};
-      }
-    }
-  } else {
-    if ($skew{$cmfont}{$item}) {$SKEW{$mjfont}{$remap} = $skew{$cmfont}{$item}}
-  }
-}
 
 #########################################################################
 
@@ -2384,7 +2026,6 @@ foreach $cmfont (sort (keys %map)) {
     @remap = @{$map{$cmfont}{$mjfont}};
     while (defined($item = shift(@remap))) {
       $remap = shift(@remap);
-      checkSkew($cmfont,$mjfont,$item,$remap);
       push(@$script,'Open("pfa/'.$cmfont.'.pfa")');
       if (ref($item) eq "ARRAY") {
 	push(@$script,'Select('.sprintf("%d,%d",@$item).')');
@@ -2438,24 +2079,6 @@ foreach $font (sort keys %script) {
 		    'SelectAll()','AutoInstr()',
                     'Generate("ttf/KaTeX_'.$family.'.ttf")'),"\n";
   close(SCRIPT);
-}
-
-#
-#  Write skew data
-#
-open(SKEWFILE,">skew.js");
-foreach $mjfont (sort(keys %SKEW)) {
-  next if $mjfont eq "Math-Regular";
-  $name = "KaTeX_$mjfont";
-  $name =~ s/-Regular//; $name =~ s/BoldItalic/Bold-Italic/;
-  $name =~ s/-I/-i/; $name =~ s/-B/-b/;
-  print SKEWFILE "  HTMLCSS.FONTDATA.FONTS['$name'].skew = {";
-  $comma = "";
-  foreach $n (sort {$a <=> $b} (keys %{$SKEW{$mjfont}})) {
-    print SKEWFILE "$comma\n    ",sprintf("0x%X",$n),": $SKEW{$mjfont}{$n}";
-    $comma = ",";
-  }
-  print SKEWFILE "\n  };\n\n";
 }
 
 1;

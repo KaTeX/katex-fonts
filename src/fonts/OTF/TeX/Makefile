@@ -21,7 +21,7 @@ include ../../../custom.cfg
 
 MFTRACE_MODIFIED=lib/mftrace-modified
 
-all: fonts install
+all: fonts
 
 blacker: $(MFTRACE_MODIFIED)
 $(MFTRACE_MODIFIED):
@@ -112,7 +112,7 @@ ttf: ff
 
 	@for file in `ls ttf/*.ttf`; do \
 		echo "hinting $$file"; \
-		if echo "$$file" | $(GREP) -q -e "Greek" -e "Size[1-4]" -e "Typewriter" -e "Win"; then \
+		if echo "$$file" | $(GREP) -q -e "Size[1-4]" -e "Typewriter"; then \
 			$(TTFAUTOHINT) --windows-compatibility --symbol $$file $$file.hinted; \
 		else \
 			$(TTFAUTOHINT) --windows-compatibility $$file $$file.hinted; \
@@ -121,28 +121,6 @@ ttf: ff
 		done
 
 	./fix_os2_metrics.rb ttf/
-eot: ttf
-	mkdir -p eot
-	rm -f eot/*
-
-	@for file in `ls ttf/*.ttf | $(SED) 's|ttf/\(.*\)\.ttf|\1|'`; do \
-		echo "Generating $$file.eot..."; \
-		$(TTF2EOT) < ttf/$$file.ttf > eot/$$file.eot; \
-		done
-
-	rm -f eot/*WinChrome* eot/*Greek*
-
-svg: ttf
-	mkdir -p svg
-	rm -f svg/*
-
-	@for file in `ls ttf/*.ttf | $(SED) 's|ttf/\(.*\)\.ttf|\1|'`; do \
-		echo "Generating $$file.svg..."; \
-		$(JAVA) -jar $(TTF2SVG) ttf/$$file.ttf \
-		-id $$file -o svg/$$file.svg -l 0 -h 65535; \
-		done
-
-	rm -f svg/*WinIE6* svg/*Greek*
 
 woff: otf ttf
 	@for file in `ls ttf/*.ttf | $(SED) 's|ttf/\(.*\)\.ttf|\1|'`; do \
@@ -153,7 +131,6 @@ woff: otf ttf
 	mkdir -p woff
 	rm -f woff/*
 	mv ttf/*.woff woff
-	rm -f woff/*WinChrom* woff/*WinIE6* woff/*Greek*
 
 woff2: woff
 	@for file in `ls ttf/*.ttf | $(SED) 's|ttf/\(.*\)\.ttf|\1|'`; do \
@@ -164,43 +141,11 @@ woff2: woff
 	mkdir -p woff2
 	rm -f woff2/*
 	mv ttf/*.woff2 woff2
-	rm -f woff2/*WinChrom* woff2/*WinIE6* woff2/*Greek*
-
-css: woff
-	mkdir -p css
-	rm -f css/*
-
-	@for file in `ls woff/*.woff | $(SED) 's|woff/\(.*\)\.woff|\1|'`; do \
-		echo "Generating $$file.css..."; \
-		$(PERL) woff2css $$file > css/$$file.css; \
-		end
-
-	$(PERL) css2all css/*.css > KaTeX-All.css
-	mv KaTeX-All.css css
 
 OTFandTTF: ttf
 
-fonts: OTFandTTF eot svg woff # css
-
-install:
-        #Copy the font files into the system font directory
-        #rm -f $FONTDIR/KaTeX_*
-	cp `ls otf/*.otf | $(GREP) -v 'Greek'` $(FONTDIR)
-        # echo `ls ttf/*.ttf | $(GREP) -Ev 'WinChro|WinIE6'`
-	cp ttf/*Greek*.ttf $(FONTDIR)
-
-        #  Put the fonts into the KaTeX fonts folder
-	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/otf/*.*
-	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/eot/*.*
-	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/svg/*.*
-	rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/woff/*.*
-        #rm -f $(MATHJAXDIR)/fonts/HTML-CSS/TeX/css/*.*
-	cp `ls otf/*.otf | $(GREP) -v 'Greek'` $(MATHJAXDIR)/fonts/HTML-CSS/TeX/otf
-	cp eot/*.eot $(MATHJAXDIR)/fonts/HTML-CSS/TeX/eot
-	cp svg/*.svg $(MATHJAXDIR)/fonts/HTML-CSS/TeX/svg
-	cp woff/*.woff $(MATHJAXDIR)/fonts/HTML-CSS/TeX/woff
-        #cp css/*.css $(MATHJAXDIR)/fonts/HTML-CSS/TeX/css
+fonts: OTFandTTF woff woff2
 
 clean:
 	rm -f $(MFTRACE_MODIFIED) lib/blacker.mf
-	rm -rf pfa ff otf ttf eot svg woff css
+	rm -rf pfa ff otf ttf woff woff2
