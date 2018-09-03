@@ -16,8 +16,8 @@ usage() {
 
 used_fonts=(
     KaTeX_AMS-Regular
-    KaTeX_Caligraphic-Bold
-    KaTeX_Caligraphic-Regular
+    KaTeX_Calligraphic-Bold
+    KaTeX_Calligraphic-Regular
     KaTeX_Fraktur-Bold
     KaTeX_Fraktur-Regular
     KaTeX_Main-Regular
