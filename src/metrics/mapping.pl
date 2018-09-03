@@ -150,7 +150,7 @@ $map{cmmi10} = {
     0x7C => 0x237,          # \jmath
   ],
 
-  "Caligraphic-Regular" => [
+  "Calligraphic-Regular" => [
     [0x30,0x39] => 0x30,    # Oldstyle 0-9
   ],
 };
@@ -257,7 +257,7 @@ $map{cmsy10} = {
     0x36 => 0x2F            # \not
   ],
 
-  "Caligraphic-Regular" => [
+  "Calligraphic-Regular" => [
     [0x41,0x5A] => 0x41,    # A-Z
   ],
 };
