@@ -20,6 +20,7 @@ RUN apt-get update \
     pkg-config \
     libharfbuzz-dev \
     libfreetype6-dev \
+    libjson-perl \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
  && gem install ttfunk --version 1.1.1
