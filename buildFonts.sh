@@ -54,6 +54,7 @@ cleanup() {
 CONTAINER=
 trap cleanup EXIT
 
+LAST_COMMIT_DATE="$(git log -1 --format=%ct -- src/fonts)"
 IMAGE="katex/fonts:DF-$(openssl sha1 Dockerfile | tail -c 9)"
 TMPFILE="$(mktemp "${TMPDIR:-/tmp}/mjf.XXXXXXXX")"
 FILE="$TMPFILE"
@@ -72,10 +73,11 @@ if [[ $(docker images "$IMAGE" | wc -l) -lt 2 ]]; then
 fi
 
 CMDS="set -ex
+export SOURCE_DATE_EPOCH=${LAST_COMMIT_DATE}
 tar xf MathJax-dev.tar.gz
 cp default.cfg custom.cfg
 make custom.cfg.pl
-make -C fonts/OTF/TeX ${filetypes[*]}
+make -C fonts/OTF/TeX fonts
 tar cf /fonts.tar ${filetypes[*]/#/fonts/OTF/TeX/}"
 
 echo "Creating and starting docker container from image $IMAGE"

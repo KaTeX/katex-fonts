@@ -2012,7 +2012,7 @@ foreach $cmfont (sort (keys %map)) {
       $lines =~ s/\*WEIGHT_S\*/$STYLE/g; $lines =~ s/\*NORMAL\*/$normal/g;
       if ($style eq "Regular") {$lines =~ s/\* WEIGHT\*//g} else {$lines =~ s/\* WEIGHT\*/ $STYLE/g}
       open(SPACE,">Space.ttx"); print SPACE $lines; close(SPACE);
-      `$TTX Space.ttx; mv Space.ttf '$otf'`; unlink("Space.ttx");
+      `$TTX -f Space.ttx; mv Space.otf '$otf'`; unlink("Space.ttx");
       $script{$mjfont} = [
         'Open("'.$otf.'")',
         'SetPanose([0,0,'.($style eq 'Bold' ? '8' : '0').',0,0,0,0,0,0,0])',

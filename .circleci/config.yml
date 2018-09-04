@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: ylemkimon/katex-fonts:29d4cdbc
+      - image: ylemkimon/katex-fonts:d607030c
 
     steps:
       - checkout
@@ -13,7 +13,7 @@ jobs:
             cd src
             cp default.cfg custom.cfg
             make custom.cfg.pl
-            make -C fonts/OTF/TeX ttf woff woff2
+            make -C fonts/OTF/TeX fonts
             cd ..
             rm -f fonts/*.*
             cp src/fonts/OTF/TeX/ttf/*.ttf fonts
