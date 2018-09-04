@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: $DOCKER_USERNAME/katex-fonts:29d4cdbc
+      - image: ylemkimon/katex-fonts:29d4cdbc
 
     steps:
       - checkout
