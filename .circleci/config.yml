@@ -10,6 +10,7 @@ jobs:
       - run:
           name: Build fonts
           command: |
+            SOURCE_DATE_EPOCH=$(git log -1 --format=%ct -- src/fonts)
             cd src
             cp default.cfg custom.cfg
             make custom.cfg.pl
