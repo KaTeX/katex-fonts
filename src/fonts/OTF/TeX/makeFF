@@ -2061,7 +2061,7 @@ foreach $font (sort keys %script) {
   $family = $font; $family .= "-Regular" unless $family =~ m/-/;
   $style = $family; $style =~ s/.*-//;
   print "KaTeX_$font\n";
-  open(SCRIPT,">","ff/KaTeX_$font.ff");
+  open(SCRIPT,">","ff/KaTeX_$family.ff");
   print SCRIPT join(";\n",@{$script{$font}},@{$style{$style}},"",
                     'SelectAll()','RoundToInt()',
 		    'Simplify()','AddExtrema()','Simplify()',
