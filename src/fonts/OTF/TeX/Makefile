@@ -101,23 +101,21 @@ fonts: ff
 	mkdir -p ttf woff woff2
 	rm -f ttf/* woff/* woff2/*
 
-	@for file in `ls ff/*.ff`; do \
+	@for file in `ls ff/*.ff | $(SED) 's|ff/\(.*\)\.ff|\1|'`; do \
 		echo ""; \
 		echo $$file; \
-		$(FONTFORGE) -lang=ff -script $$file; \
-		done
-
-	@for file in `ls ttf/*.ttf`; do \
+		$(FONTFORGE) -lang=ff -script ff/$$file.ff; \
+		\
 		echo "Hinting $$file"; \
 		if echo "$$file" | $(GREP) -q -e "Size[1-4]" -e "Typewriter"; then \
-			$(TTFAUTOHINT) --windows-compatibility --symbol $$file $$file.hinted; \
+			$(TTFAUTOHINT) --windows-compatibility --symbol ttf/$$file.ttf ttf/$$file.ttf.hinted; \
 		else \
-			$(TTFAUTOHINT) --windows-compatibility $$file $$file.hinted; \
+			$(TTFAUTOHINT) --windows-compatibility ttf/$$file.ttf ttf/$$file.ttf.hinted; \
 		fi; \
-		mv $$file.hinted $$file; \
+		mv ttf/$$file.ttf.hinted ttf/$$file.ttf; \
 		\
 		echo "Generating $$file..."; \
-		$(PYTHON) generate_fonts.py $$file; \
+		$(PYTHON) generate_fonts.py ttf/$$file.ttf; \
 		done
 
 clean:
