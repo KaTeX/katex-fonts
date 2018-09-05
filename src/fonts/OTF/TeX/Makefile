@@ -101,14 +101,10 @@ fonts: ff
 	mkdir -p ttf woff woff2
 	rm -f ttf/* woff/* woff2/*
 
-        # Handle the KaTeX_Size4 font first as it used by other fonts.
-	@echo "KaTeX_Size4.ff"
-	$(FONTFORGE) -lang=ff -script ff/KaTeX_Size4.ff
-
-	@for file in `cd ff; ls *.ff | $(GREP) -v KaTeX_Size4`; do \
+	@for file in `ls ff/*.ff`; do \
 		echo ""; \
 		echo $$file; \
-		$(FONTFORGE) -lang=ff -script ff/$$file; \
+		$(FONTFORGE) -lang=ff -script $$file; \
 		done
 
 	@for file in `ls ttf/*.ttf`; do \

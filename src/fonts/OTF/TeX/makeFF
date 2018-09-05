@@ -416,6 +416,13 @@ $map{cmex10} = {
     0x76 => [0xE001,0,565], # radical top (PUA)
     [0x7A,0x7D] => 0xE150,  # \braceld, \bracerd, \bracelu, \braceru (PUA)
   ],
+
+  "Main-Regular" => [
+    0x38 => [0x23B0,0,900], # left curly brace upper hook, for lgroup, lmoustache
+    0x39 => [0x23B1,0,900], # right curly brace upper hook, for rgroup, rmoustache
+    0x3A => 0x23A9,         # left curly brace lower hook, for lgroup, rmoustache
+    0x3B => 0x23AD,         # right curly brace lower hook, for rgroup, lmoustache
+  ],
 };
 
 $map{cmti10} = {
@@ -1510,67 +1517,43 @@ $extra{'Main-Regular'} = {
   ],
 
   lgroup => [
-    'Generate("otf/KaTeX_Main-Regular.otf")',
-    'Open("otf/KaTeX_Size4-Regular.otf")',
-    'Select(0u23A7)','Copy()',
-    'Select(0u23B8)','Paste()',
+    'Select(0u23B0)','Copy()',
+    'Select(0u27EE)','Paste()',
     'Select(0u23A9)','Copy()',
-    'Select(0u23B8)',
+    'Select(0u27EE)',
     'PasteWithOffset(0,0)',
     'Scale(55,0,0)','RoundToInt()','Move(-38,250)',
     'RemoveOverlap()','Simplify()',
     'SetRBearing(-38,1)',
-    'Copy()','Clear()',
-    'Open("otf/KaTeX_Main-Regular.otf")',
-    'Select(0u27EE)','Paste()',
   ],
 
   rgroup => [
-    'Generate("otf/KaTeX_Main-Regular.otf")',
-    'Open("otf/KaTeX_Size4-Regular.otf")',
-    'Select(0u23AB)','Copy()',
-    'Select(0u23B8)','Paste()',
+    'Select(0u23B1)','Copy()',
+    'Select(0u27EF)','Paste()',
     'Select(0u23AD)','Copy()',
-    'Select(0u23B8)',
+    'Select(0u27EF)',
     'PasteWithOffset(1,0)',
     'Scale(55,0,0)','RoundToInt()','Move(-38,250)',
     'RemoveOverlap()','Simplify()',
     'SetRBearing(-38,1)',
-    'Copy()','Clear()',
-    'Open("otf/KaTeX_Main-Regular.otf")',
-    'Select(0u27EF)','Paste()',
   ],
 
   lmoustache => [
-    'Generate("otf/KaTeX_Main-Regular.otf")',
-    'Open("otf/KaTeX_Size4-Regular.otf")',
-    'Select(0u23A7)','Copy()',
-    'Select(0u23B8)','Paste()',
     'Select(0u23AD)','Copy()',
-    'Select(0u23B8)',
+    'Select(0u23B0)',
     'PasteWithOffset(0,0)',
     'Scale(55,0,0)','RoundToInt()','Move(-38,250)',
     'RemoveOverlap()','Simplify()',
     'SetRBearing(-38,1)',
-    'Copy()','Clear()',
-    'Open("otf/KaTeX_Main-Regular.otf")',
-    'Select(0u23B0)','Paste()',
   ],
 
   rmoustache => [
-    'Generate("otf/KaTeX_Main-Regular.otf")',
-    'Open("otf/KaTeX_Size4-Regular.otf")',
-    'Select(0u23AB)','Copy()',
-    'Select(0u23B8)','Paste()',
     'Select(0u23A9)','Copy()',
-    'Select(0u23B8)',
+    'Select(0u23B1)',
     'PasteWithOffset(0,0)',
     'Scale(55,0,0)','RoundToInt()','Move(-38,250)',
     'RemoveOverlap()','Simplify()',
     'SetRBearing(-38,1)',
-    'Copy()','Clear()',
-    'Open("otf/KaTeX_Main-Regular.otf")',
-    'Select(0u23B1)','Paste()',
   ],
 
   diacriticals => [
@@ -2062,6 +2045,14 @@ foreach $font (keys %extra) {
     push(@{$script{$font}},join(";\n",@{$extra{$font}{$char}}),"");
   }
 }
+
+# Cleanup temporary glyphs
+push(@{$script{'Main-Regular'}},
+  'Select(0u23A9)',
+  'Clear()',
+  'Select(0u23AD)',
+  'Clear()',
+);
 
 #
 #  Write all scripts
