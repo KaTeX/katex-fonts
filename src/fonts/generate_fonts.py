@@ -30,7 +30,7 @@ if 'GDEF' in font:
     del font['GDEF']
 
 # set font version from package.json
-with open(os.path.join(os.path.dirname(__file__), '../../../../package.json')) as f:
+with open(os.path.join(os.path.dirname(__file__), '../../package.json')) as f:
     version = json.load(f)['version']
 
 font['name'].setName(unicode('Version ' + version), 5, 3, 1, 1033)

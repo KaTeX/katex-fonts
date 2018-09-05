@@ -2,10 +2,10 @@
 
 #  Creates the metafont file needed for darker copies of the TeX fonts,
 #  and modifies mftrace to use it.
-#  
+#
 #  Usage:  ./makeBlacker blackness
 
-require "../../../custom.cfg.pl";
+require "../custom.cfg.pl";
 
 $blacker = shift;
 unless ($blacker) {

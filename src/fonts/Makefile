@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-include ../../../custom.cfg
+include ../custom.cfg
 
 MFTRACE_MODIFIED=lib/mftrace-modified
 
