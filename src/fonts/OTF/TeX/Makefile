@@ -79,10 +79,10 @@ pfa: $(MFTRACE_MODIFIED)
 	@echo "eufb10"
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eufb10
 
-        #echo "eusm10"
-        #$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eusm10
-        #echo "eusb10"
-        #$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eusb10
+	# echo "eusm10"
+	# $(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eusm10
+	# echo "eusb10"
+	# $(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eusb10
 
 	@echo "rsfs10"
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify --encoding $(BASEENCODING)/tex256.enc rsfs10
@@ -94,7 +94,7 @@ pfa: $(MFTRACE_MODIFIED)
 ff: pfa
 	mkdir -p ff otf
 	rm -f ff/* otf/*
-	$(PERL)	makeFF
+	$(PERL) makeFF
 
 .PHONY: fonts
 fonts: ff
