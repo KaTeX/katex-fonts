@@ -204,7 +204,7 @@ $map{cmsy10} = {
     0x33 => 0x220B,         # \ni
     0x34 => 0x25B3,         # \bigtriangleup and \triangle
     0x35 => 0x25BD,         # \bigtriangledown
-    0x36 => 0x338,          # \not (combining, no negative leading space)
+    0x36 => 0x2044,         # \not (combining, no negative leading space)
 
     0x38 => 0x2200,         # \forall
     0x39 => 0x2203,         # \exists
@@ -251,10 +251,6 @@ $map{cmsy10} = {
     0x7D => 0x2662,         # \diamondsuit
     0x7E => 0x2661,         # \heartsuit
     0x7F => 0x2660,         # \spadesuit
-  ],
-
-  "Math-Italic" => [
-    0x36 => 0x2F            # \not
   ],
 
   "Caligraphic-Regular" => [
@@ -684,7 +680,7 @@ $map{cmbsy10} = {
     0x33 => 0x220B,         # \ni
     0x34 => 0x25B3,         # \bigtriangleup and \triangle
     0x35 => 0x25BD,         # \bigtriangledown
-    0x36 => 0x338,          # \not (combining, no negative leading space)
+    0x36 => 0x2044,         # \not (combining, no negative leading space)
 
     0x38 => 0x2200,         # \forall
     0x39 => 0x2203,         # \exists
@@ -731,10 +727,6 @@ $map{cmbsy10} = {
     0x7D => 0x2662,         # \diamondsuit
     0x7E => 0x2661,         # \heartsuit
     0x7F => 0x2660,         # \spadesuit
-  ],
-
-  "Math-BoldItalic" => [
-    0x36 => 0x2F            # \not
   ],
 };
 

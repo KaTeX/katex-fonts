@@ -63,7 +63,7 @@ if [[ ! -f fonts/OTF/TeX/Makefile ]]; then
     echo "src does not look like MathJax-dev" >&2
     exit 1
 fi
-tar cf "$FILE" Makefile default.cfg fonts/OTF/TeX
+tar cf "$FILE" ../package.json Makefile default.cfg fonts/OTF/TeX
 popd
 
 # build image if missing
