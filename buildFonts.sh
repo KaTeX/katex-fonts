@@ -62,7 +62,7 @@ if [[ ! -f fonts/Makefile ]]; then
     echo "src does not look like katex-fonts" >&2
     exit 1
 fi
-tar cf "$FILE" Makefile default.cfg fonts
+tar cf "$FILE" ../package.json Makefile default.cfg fonts
 popd
 
 # build image if missing
