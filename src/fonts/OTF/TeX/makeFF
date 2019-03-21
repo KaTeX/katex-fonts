@@ -1362,7 +1362,7 @@ $extra{'Main-Regular'} = {
   ],
 
   not => [
-    'Select(0u338)',
+    'Select(0uE020)',
     'SetRBearing(778,1)',
   ],
 
@@ -1682,29 +1682,29 @@ $extra{'Main-Bold'} = {
   ],
 
   not => [
-    'Select(0u338)',
+    'Select(0uE020)',
     'SetRBearing(894,1)',
   ],
 
-  notin => [
-    'Select(0u2208)','Copy()',
-    'Select(0u2209)','Paste()',
-    'Select(0u338)','Copy()',
-    'Select(0u2209)',
+#  notin => [
+#    'Select(0u2208)','Copy()',
+#    'Select(0u2209)','Paste()',
+#    'Select(0u338)','Copy()',
+#    'Select(0u2209)',
 #    'PasteWithOffset(-63,0)',
-    'PasteWithOffset(831,0)',
-    'RemoveOverlap()',
-  ],
+#    'PasteWithOffset(831,0)',
+#    'RemoveOverlap()',
+#  ],
 
-  noteq => [
-    'Select(0u3D)','Copy()',
-    'Select(0u2260)','Paste()',
-    'Select(0u338)','Copy()',
-    'Select(0u2260)',
+#  noteq => [
+#    'Select(0u3D)','Copy()',
+#    'Select(0u2260)','Paste()',
+#    'Select(0u338)','Copy()',
+#    'Select(0u2260)',
 #    'PasteWithOffset(0,0)',
-    'PasteWithOffset(894,0)',
-    'RemoveOverlap()',
-  ],
+#    'PasteWithOffset(894,0)',
+#    'RemoveOverlap()',
+#  ],
 
   longleftarrow => [
     'Select(0u2190)','Copy()',
