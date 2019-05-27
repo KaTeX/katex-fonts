@@ -13,12 +13,10 @@ jobs:
             cd src
             cp default.cfg custom.cfg
             make custom.cfg.pl
-            make -C fonts/OTF/TeX fonts
+            make -C fonts/OTF/TeX pfa
             cd ..
             rm -f fonts/*.*
-            cp src/fonts/OTF/TeX/ttf/*.ttf fonts
-            cp src/fonts/OTF/TeX/woff/*.woff fonts
-            cp src/fonts/OTF/TeX/woff2/*.woff2 fonts
+            cp src/fonts/OTF/TeX/pfa/* fonts
             tar zcf fonts.tar.gz fonts
 
       - run:
