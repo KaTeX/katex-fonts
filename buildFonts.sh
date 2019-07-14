@@ -62,7 +62,7 @@ if [[ ! -f fonts/Makefile ]]; then
     echo "src does not look like katex-fonts" >&2
     exit 1
 fi
-tar cf "$FILE" ../package.json Makefile default.cfg fonts
+tar cfP "$FILE" ../package.json Makefile default.cfg fonts
 popd
 
 # build image if missing
@@ -73,7 +73,7 @@ fi
 
 CMDS="set -ex
 export SOURCE_DATE_EPOCH=${LAST_COMMIT_DATE}
-tar xf MathJax-dev.tar.gz
+tar xfP MathJax-dev.tar.gz
 cp default.cfg custom.cfg
 make custom.cfg.pl
 make -C fonts fonts
