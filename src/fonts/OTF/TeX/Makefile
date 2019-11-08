@@ -56,7 +56,7 @@ pfa: $(MFTRACE_MODIFIED)
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify --encoding $(TETEXENCODING)/10037936.enc msam10
 
 	@echo "msbm10"
-	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 450 --simplify --encoding $(TETEXENCODING)/10037936.enc msbm10
+	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify --encoding $(TETEXENCODING)/10037936.enc msbm10
 
 	@echo "cmmib10"
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --encoding $(TETEXENCODING)/aae443f0.enc --simplify cmmib10
