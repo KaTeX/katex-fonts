@@ -38,10 +38,7 @@ pfa: $(MFTRACE_MODIFIED)
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --encoding $(TETEXENCODING)/10037936.enc --simplify cmsy10
 
 	@echo "cmex10"
-	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --keep cmex10
-	$(FONTFORGE) -lang=ff -c 'Open("mftrace.dir/cmex10.pfa.raw");SelectAll();AddExtrema();Simplify();AutoHint();Generate("cmex10.pfa");'
-	rm -rf mftrace.dir
-	rm cmex10.afm
+	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify cmex10
 
 	@echo "cmbx10"
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify cmbx10
