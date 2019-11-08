@@ -75,9 +75,9 @@ pfa: $(MFTRACE_MODIFIED)
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify cmssbx10
 
 	@echo "eufm10"
-	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eufm10
+	cp "`$(KPSEWHICH) eufm10.pfb`" eufm10.pfb
 	@echo "eufb10"
-	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eufb10
+	cp "`$(KPSEWHICH) eufb10.pfb`" eufb10.pfb
 
         #echo "eusm10"
         #$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eusm10
@@ -90,6 +90,7 @@ pfa: $(MFTRACE_MODIFIED)
 	mkdir -p pfa
 	rm -f pfa/*
 	mv *.pfa pfa
+	mv *.pfb pfa
 
 ff: pfa
 	mkdir -p ff otf
