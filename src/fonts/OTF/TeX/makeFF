@@ -119,14 +119,11 @@ $map{cmmi10} = {
 
     [0x41,0x5A] => 0x41,    # A-Z
     [0x61,0x7A] => 0x61,    # a - z
+    [0x30,0x39] => 0x30,    # Oldstyle 0-9
 
     0x6F => 0x3BF,          # omicron
     0x7B => 0x131,          # \imath
     0x7C => 0x237,          # \jmath
-  ],
-
-  "Caligraphic" => [
-    [0x30,0x39] => 0x30,    # Oldstyle 0-9
   ],
 
   "Main-Regular" => [
@@ -605,16 +602,13 @@ $map{cmmib10} = {
     0x26 => 0x3C2,          # \varsigma
     0x27 => 0x3C6,          # \varphi
 
+    [0x30,0x39] => 0x30,    # Oldstyle 0-9
     [0x41,0x5A] => 0x41,    # A-Z
     [0x61,0x7A] => 0x61,    # a - z
 
     0x6F => 0x3BF,          # omicron
     0x7B => 0x131,          # \imath
     0x7C => 0x237,          # \jmath
-  ],
-
-  "Caligraphic-Bold" => [
-    [0x30,0x39] => 0x30,    # Oldstyle 0-9
   ],
 
   "Main-Bold" => [

@@ -116,6 +116,7 @@ $map{cmmi10} = {
     0x26 => 0x3C2,          # \varsigma
     0x27 => 0x3C6,          # \varphi
 
+    [0x30,0x39] => 0x30,    # Oldstyle 0-9
     [0x41,0x5A] => 0x41,    # A-Z
     [0x61,0x7A] => 0x61,    # a - z
 
@@ -146,10 +147,6 @@ $map{cmmi10} = {
 
     0x7D => 0x2118,         # \wp
     0x7E => [0x20D7,-653,0],# \vec
-  ],
-
-  "Caligraphic-Regular" => [
-    [0x30,0x39] => 0x30,    # Oldstyle 0-9
   ],
 };
 
@@ -600,6 +597,7 @@ $map{cmmib10} = {
 
     [0x41,0x5A] => 0x41,    # A-Z
     [0x61,0x7A] => 0x61,    # a - z
+    [0x30,0x39] => 0x30,    # Oldstyle 0-9
 
     0x6F => 0x3BF,          # omicron
     0x7B => 0x131,          # \imath
