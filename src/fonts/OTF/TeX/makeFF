@@ -119,7 +119,10 @@ $map{cmmi10} = {
 
     [0x41,0x5A] => 0x41,    # A-Z
     [0x61,0x7A] => 0x61,    # a - z
+
     0x6F => 0x3BF,          # omicron
+    0x7B => 0x131,          # \imath
+    0x7C => 0x237,          # \jmath
   ],
 
   "Caligraphic" => [
@@ -148,8 +151,6 @@ $map{cmmi10} = {
     0x5F => 0x2322,         # \frown
     0x60 => 0x2113,         # \ell
 
-    0x7B => 0x131,          # \imath
-    0x7C => 0x237,          # \jmath
     0x7D => 0x2118,         # \wp
     0x7E => [0x20D7,-653,0],# \vec
   ],
@@ -606,7 +607,10 @@ $map{cmmib10} = {
 
     [0x41,0x5A] => 0x41,    # A-Z
     [0x61,0x7A] => 0x61,    # a - z
+
     0x6F => 0x3BF,          # omicron
+    0x7B => 0x131,          # \imath
+    0x7C => 0x237,          # \jmath
   ],
 
   "Caligraphic-Bold" => [
@@ -636,8 +640,6 @@ $map{cmmib10} = {
     0x60 => 0x2113,         # \ell
     0x68 => 0x210F,         # \hbar (bar added below)
 
-    0x7B => 0x131,          # \imath
-    0x7C => 0x237,          # \jmath
     0x7D => 0x2118,         # \wp
     0x7E => [0x20D7,-729,0],# \vec
   ],

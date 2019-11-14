@@ -118,7 +118,10 @@ $map{cmmi10} = {
 
     [0x41,0x5A] => 0x41,    # A-Z
     [0x61,0x7A] => 0x61,    # a - z
+
     0x6F => 0x3BF,          # omicron
+    0x7B => 0x131,          # \imath
+    0x7C => 0x237,          # \jmath
   ],
 
   "Main-Regular" => [
@@ -143,11 +146,6 @@ $map{cmmi10} = {
 
     0x7D => 0x2118,         # \wp
     0x7E => [0x20D7,-653,0],# \vec
-  ],
-
-  "Main-Italic" => [
-    0x7B => 0x131,          # \imath
-    0x7C => 0x237,          # \jmath
   ],
 
   "Caligraphic-Regular" => [
@@ -602,7 +600,10 @@ $map{cmmib10} = {
 
     [0x41,0x5A] => 0x41,    # A-Z
     [0x61,0x7A] => 0x61,    # a - z
+
     0x6F => 0x3BF,          # omicron
+    0x7B => 0x131,          # \imath
+    0x7C => 0x237,          # \jmath
   ],
 
   "Main-Bold" => [
