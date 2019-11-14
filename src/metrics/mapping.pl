@@ -431,7 +431,6 @@ $map{cmti10} = {
 
     [0x21,0x23] => 0x21,    # !, ", #,
     0x22 => 0x201D,         # "
-    0x24 => 0xA3,           # pound sign
     [0x25,0x2F] => 0x25,    # %, &, ', (, ), *, +, comma, -, ., /
     0x27 => 0x2019,         # '
     [0x30,0x39] => 0x30,    # 0-9
@@ -459,6 +458,10 @@ $map{cmti10} = {
     0x1D => 0xC6,           # AE ligature
     0x1E => 0x152,          # OE ligature
     0x1F => 0xD8,           # O with slash
+  ],
+
+  "Main-Regular" => [
+    0x24 => 0xA3,           # pound sign
   ],
 };
 
@@ -539,7 +542,6 @@ $map{cmbxti10} = {
 
     [0x21,0x23] => 0x21,    # !, ", #,
     0x22 => 0x201D,         # "
-    0x24 => 0xA3,           # pound sign
     [0x25,0x2F] => 0x25,    # %, &, ', (, ), *, +, comma, -, ., /
     0x27 => 0x2019,         # '
     [0x30,0x39] => 0x30,    # 0-9
@@ -567,6 +569,10 @@ $map{cmbxti10} = {
     0x1D => 0xC6,           # AE ligature
     0x1E => 0x152,          # OE ligature
     0x1F => 0xD8,           # O with slash
+  ],
+
+  "Main-Bold" => [
+    0x24 => 0xA3,           # pound sign
   ],
 };
 
