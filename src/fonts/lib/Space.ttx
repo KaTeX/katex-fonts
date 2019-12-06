@@ -110,46 +110,6 @@
   </OS_2>
 
   <name>
-    <namerecord nameID="0" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Copyright (c) 2009-2010 Design Science, Inc.
-Copyright (c) 2014-2018 Khan Academy
-    </namerecord>
-    <namerecord nameID="1" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      *NAME*
-    </namerecord>
-    <namerecord nameID="2" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      *WEIGHT_S*
-    </namerecord>
-    <namerecord nameID="3" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      FontForge 2.0 : *NAME*-*WEIGHT*
-    </namerecord>
-    <namerecord nameID="4" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      *NAME*-*WEIGHT*
-    </namerecord>
-    <namerecord nameID="5" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Version 1.1
-    </namerecord>
-    <namerecord nameID="6" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      *NAME*-*WEIGHT*
-    </namerecord>
-    <namerecord nameID="13" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      Copyright (c) 2009-2010, Design Science, Inc. (&lt;www.mathjax.org&gt;)
-Copyright (c) 2014-2018 Khan Academy (&lt;www.khanacademy.org&gt;),
-with Reserved Font Name *NAME*.
-
-This Font Software is licensed under the SIL Open Font License, Version 1.1.
-This license available with a FAQ at:
-http://scripts.sil.org/OFL
-    </namerecord>
-    <namerecord nameID="14" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      http://scripts.sil.org/OFL
-    </namerecord>
-    <namerecord nameID="16" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      *NAME*
-    </namerecord>
-    <namerecord nameID="17" platformID="1" platEncID="0" langID="0x0" unicode="True">
-      *WEIGHT*
-    </namerecord>
     <namerecord nameID="0" platformID="3" platEncID="1" langID="0x409">
       Copyright (c) 2009-2010 Design Science, Inc.
 Copyright (c) 2014-2018 Khan Academy
@@ -194,12 +154,6 @@ http://scripts.sil.org/OFL
       <map code="0xeffe" name="uniEFFE"/><!-- ???? -->
       <map code="0xefff" name="uniEFFF"/><!-- ???? -->
     </cmap_format_4>
-    <cmap_format_0 platformID="1" platEncID="0" language="0">
-      <map code="0x9" name="space"/>
-      <map code="0xd" name="space"/>
-      <map code="0x20" name="space"/>
-      <map code="0xca" name="uni00A0"/>
-    </cmap_format_0>
     <cmap_format_4 platformID="3" platEncID="1" language="0">
       <map code="0x20" name="space"/><!-- SPACE -->
       <map code="0xa0" name="uni00A0"/><!-- NO-BREAK SPACE -->
