@@ -2011,7 +2011,11 @@ foreach $cmfont (sort (keys %map)) {
     @remap = @{$map{$cmfont}{$mjfont}};
     while (defined($item = shift(@remap))) {
       $remap = shift(@remap);
-      push(@$script,'Open("pfa/'.$cmfont.'.pfa")');
+      if ($cmfont =~ /^eu/) {
+	push(@$script,'Open("pfa/'.$cmfont.'.pfb")');
+      } else {
+	push(@$script,'Open("pfa/'.$cmfont.'.pfa")');
+      }
       if (ref($item) eq "ARRAY") {
 	push(@$script,'Select('.sprintf("%d,%d",@$item).')');
       } else {

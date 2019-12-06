@@ -38,10 +38,7 @@ pfa: $(MFTRACE_MODIFIED)
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --encoding $(TETEXENCODING)/10037936.enc --simplify cmsy10
 
 	@echo "cmex10"
-	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --keep cmex10
-	$(FONTFORGE) -lang=ff -c 'Open("mftrace.dir/cmex10.pfa.raw");SelectAll();AddExtrema();Simplify();AutoHint();Generate("cmex10.pfa");'
-	rm -rf mftrace.dir
-	rm cmex10.afm
+	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify cmex10
 
 	@echo "cmbx10"
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify cmbx10
@@ -56,7 +53,7 @@ pfa: $(MFTRACE_MODIFIED)
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify --encoding $(TETEXENCODING)/10037936.enc msam10
 
 	@echo "msbm10"
-	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 450 --simplify --encoding $(TETEXENCODING)/10037936.enc msbm10
+	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify --encoding $(TETEXENCODING)/10037936.enc msbm10
 
 	@echo "cmmib10"
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --encoding $(TETEXENCODING)/aae443f0.enc --simplify cmmib10
@@ -75,9 +72,9 @@ pfa: $(MFTRACE_MODIFIED)
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify cmssbx10
 
 	@echo "eufm10"
-	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eufm10
+	cp "`$(KPSEWHICH) eufm10.pfb`" eufm10.pfb
 	@echo "eufb10"
-	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eufb10
+	cp "`$(KPSEWHICH) eufb10.pfb`" eufb10.pfb
 
         #echo "eusm10"
         #$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eusm10
@@ -90,6 +87,7 @@ pfa: $(MFTRACE_MODIFIED)
 	mkdir -p pfa
 	rm -f pfa/*
 	mv *.pfa pfa
+	mv *.pfb pfa
 
 ff: pfa
 	mkdir -p ff otf
