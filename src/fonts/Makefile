@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-include ../../../custom.cfg
+include ../custom.cfg
 
 MFTRACE_MODIFIED=lib/mftrace-modified
 
@@ -38,10 +38,7 @@ pfa: $(MFTRACE_MODIFIED)
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --encoding $(TETEXENCODING)/10037936.enc --simplify cmsy10
 
 	@echo "cmex10"
-	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --keep cmex10
-	$(FONTFORGE) -lang=ff -c 'Open("mftrace.dir/cmex10.pfa.raw");SelectAll();AddExtrema();Simplify();AutoHint();Generate("cmex10.pfa");'
-	rm -rf mftrace.dir
-	rm cmex10.afm
+	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify cmex10
 
 	@echo "cmbx10"
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify cmbx10
@@ -56,7 +53,7 @@ pfa: $(MFTRACE_MODIFIED)
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify --encoding $(TETEXENCODING)/10037936.enc msam10
 
 	@echo "msbm10"
-	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 450 --simplify --encoding $(TETEXENCODING)/10037936.enc msbm10
+	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify --encoding $(TETEXENCODING)/10037936.enc msbm10
 
 	@echo "cmmib10"
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --encoding $(TETEXENCODING)/aae443f0.enc --simplify cmmib10
@@ -75,14 +72,14 @@ pfa: $(MFTRACE_MODIFIED)
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify cmssbx10
 
 	@echo "eufm10"
-	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eufm10
+	cp "`$(KPSEWHICH) eufm10.pfb`" eufm10.pfb
 	@echo "eufb10"
-	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eufb10
+	cp "`$(KPSEWHICH) eufb10.pfb`" eufb10.pfb
 
-        #echo "eusm10"
-        #$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eusm10
-        #echo "eusb10"
-        #$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eusb10
+	# echo "eusm10"
+	# $(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eusm10
+	# echo "eusb10"
+	# $(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify eusb10
 
 	@echo "rsfs10"
 	$(PYTHON) $(MFTRACE_MODIFIED) --magnification 1000 --simplify --encoding $(BASEENCODING)/tex256.enc rsfs10
@@ -90,38 +87,33 @@ pfa: $(MFTRACE_MODIFIED)
 	mkdir -p pfa
 	rm -f pfa/*
 	mv *.pfa pfa
+	mv *.pfb pfa
 
 ff: pfa
 	mkdir -p ff otf
 	rm -f ff/* otf/*
-	$(PERL)	makeFF
+	$(PERL) makeFF
 
 .PHONY: fonts
 fonts: ff
 	mkdir -p ttf woff woff2
 	rm -f ttf/* woff/* woff2/*
 
-        # Handle the KaTeX_Size4 font first as it used by other fonts.
-	@echo "KaTeX_Size4.ff"
-	$(FONTFORGE) -lang=ff -script ff/KaTeX_Size4.ff
-
-	@for file in `cd ff; ls *.ff | $(GREP) -v KaTeX_Size4`; do \
+	@for file in `ls ff/*.ff | $(SED) 's|ff/\(.*\)\.ff|\1|'`; do \
 		echo ""; \
 		echo $$file; \
-		$(FONTFORGE) -lang=ff -script ff/$$file; \
-		done
-
-	@for file in `ls ttf/*.ttf`; do \
+		$(FONTFORGE) -lang=ff -script ff/$$file.ff; \
+		\
 		echo "Hinting $$file"; \
 		if echo "$$file" | $(GREP) -q -e "Size[1-4]" -e "Typewriter"; then \
-			$(TTFAUTOHINT) --windows-compatibility --symbol $$file $$file.hinted; \
+			$(TTFAUTOHINT) --windows-compatibility --symbol ttf/$$file.ttf ttf/$$file.ttf.hinted; \
 		else \
-			$(TTFAUTOHINT) --windows-compatibility $$file $$file.hinted; \
+			$(TTFAUTOHINT) --windows-compatibility ttf/$$file.ttf ttf/$$file.ttf.hinted; \
 		fi; \
-		mv $$file.hinted $$file; \
+		mv ttf/$$file.ttf.hinted ttf/$$file.ttf; \
 		\
 		echo "Generating $$file..."; \
-		$(PYTHON) generate_fonts.py $$file; \
+		$(PYTHON) generate_fonts.py ttf/$$file.ttf; \
 		done
 
 clean:

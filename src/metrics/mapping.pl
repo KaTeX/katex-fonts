@@ -63,35 +63,6 @@ $map{cmr10} = {
 };
 
 $map{cmmi10} = {
-  "Math-Regular" => [
-    [0,1] => 0x393,         # \Gamma, \Delta
-    2 => 0x398,             # \Theta
-    3 => 0x39B,             # \Lambda
-    4 => 0x39E,             # \Xi
-    5 => 0x3A0,             # \Pi
-    6 => 0x3A3,             # \Sigma
-    [7,8] => 0x3A5,         # \Upsilon, \Phi
-    [9,0xA] => 0x3A8,       # \Psi, \Omega
-
-    [0xB,0xE] => 0x3B1,     # \alpha, \beta, \gamma, \delta
-    0xF => 0x3F5,           # \elpsilon
-    [0x10,0x18] => 0x3B6,   # \zeta, \eta, \theta, \iota, \kappa, \lambda, \mu, \nu, \xi
-    [0x19,0x1A] => 0x3C0,   # \pi, \rho
-    [0x1B,0x1D] => 0x3C3,   # \sigma, \tau, \upsilon
-    0x1E => 0x3D5,          # \phi
-    [0x1F,0x21] => 0x3C7,   # \chi, \psi, \omega
-    0x22 => 0x3B5,          # \varepsilon
-    0x23 => 0x3D1,          # \vartheta
-    0x24 => 0x3D6,          # \varpi
-    0x25 => 0x3F1,          # \varrho
-    0x26 => 0x3C2,          # \varsigma
-    0x27 => 0x3C6,          # \varphi
-
-    [0x41,0x5A] => 0x41,    # A-Z
-    [0x61,0x7A] => 0x61,    # a - z
-    0x6F => 0x3BF,          # omicron
-  ],
-
   "Math-Italic" => [
     [0,1] => 0x393,         # \Gamma, \Delta
     2 => 0x398,             # \Theta

@@ -24,7 +24,6 @@ used_fonts=(
     KaTeX_Main-Bold
     KaTeX_Main-Italic
     KaTeX_Main-BoldItalic
-    KaTeX_Math-Regular
     KaTeX_Math-Italic
     KaTeX_Math-BoldItalic
     KaTeX_SansSerif-Bold
@@ -59,11 +58,11 @@ IMAGE="katex/fonts:DF-$(openssl sha1 Dockerfile | tail -c 9)"
 TMPFILE="$(mktemp "${TMPDIR:-/tmp}/mjf.XXXXXXXX")"
 FILE="$TMPFILE"
 pushd "src"
-if [[ ! -f fonts/OTF/TeX/Makefile ]]; then
-    echo "src does not look like MathJax-dev" >&2
+if [[ ! -f fonts/Makefile ]]; then
+    echo "src does not look like katex-fonts" >&2
     exit 1
 fi
-tar cf "$FILE" ../package.json Makefile default.cfg fonts/OTF/TeX
+tar cfP "$FILE" ../package.json Makefile default.cfg fonts
 popd
 
 # build image if missing
@@ -74,11 +73,11 @@ fi
 
 CMDS="set -ex
 export SOURCE_DATE_EPOCH=${LAST_COMMIT_DATE}
-tar xf MathJax-dev.tar.gz
+tar xfP MathJax-dev.tar.gz
 cp default.cfg custom.cfg
 make custom.cfg.pl
-make -C fonts/OTF/TeX fonts
-tar cf /fonts.tar ${filetypes[*]/#/fonts/OTF/TeX/}"
+make -C fonts fonts
+tar cf /fonts.tar ${filetypes[*]/#/fonts/}"
 
 echo "Creating and starting docker container from image $IMAGE"
 CONTAINER=$(docker create "$IMAGE" /bin/sh -c "${CMDS}")
@@ -96,7 +95,7 @@ mkdir fonts
 for filetype in "${filetypes[@]}"; do
     for font in "${used_fonts[@]}"; do
         echo "$filetype/$font"
-        mv "temp/OTF/TeX/$filetype/$font".* ./fonts/
+        mv "temp/$filetype/$font".* ./fonts/
     done
 done
 rm -rf temp fonts.tar

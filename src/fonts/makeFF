@@ -6,7 +6,7 @@
 #
 #  Usage:  ./makeFF
 
-require "../../../custom.cfg.pl";
+require "../custom.cfg.pl";
 
 #########################################################################
 
@@ -64,35 +64,6 @@ $map{cmr10} = {
 };
 
 $map{cmmi10} = {
-  "Math-Regular" => [
-    [0,1] => 0x393,         # \Gamma, \Delta
-    2 => 0x398,             # \Theta
-    3 => 0x39B,             # \Lambda
-    4 => 0x39E,             # \Xi
-    5 => 0x3A0,             # \Pi
-    6 => 0x3A3,             # \Sigma
-    [7,8] => 0x3A5,         # \Upsilon, \Phi
-    [9,0xA] => 0x3A8,       # \Psi, \Omega
-
-    [0xB,0xE] => 0x3B1,     # \alpha, \beta, \gamma, \delta
-    0xF => 0x3F5,           # \elpsilon
-    [0x10,0x18] => 0x3B6,   # \zeta, \eta, \theta, \iota, \kappa, \lambda, \mu, \nu, \xi
-    [0x19,0x1A] => 0x3C0,   # \pi, \rho
-    [0x1B,0x1D] => 0x3C3,   # \sigma, \tau, \upsilon
-    0x1E => 0x3D5,          # \phi
-    [0x1F,0x21] => 0x3C7,   # \chi, \psi, \omega
-    0x22 => 0x3B5,          # \varepsilon
-    0x23 => 0x3D1,          # \vartheta
-    0x24 => 0x3D6,          # \varpi
-    0x25 => 0x3F1,          # \varrho
-    0x26 => 0x3C2,          # \varsigma
-    0x27 => 0x3C6,          # \varphi
-
-    [0x41,0x5A] => 0x41,    # A-Z
-    [0x61,0x7A] => 0x61,    # a - z
-    0x6F => 0x3BF,          # omicron
-  ],
-
   "Math-Italic" => [
     [0,1] => 0x393,         # \Gamma, \Delta
     2 => 0x398,             # \Theta
@@ -411,6 +382,13 @@ $map{cmex10} = {
     0x75 => [0xE000,0,605], # radical extension (PUA)
     0x76 => [0xE001,0,565], # radical top (PUA)
     [0x7A,0x7D] => 0xE150,  # \braceld, \bracerd, \bracelu, \braceru (PUA)
+  ],
+
+  "Main-Regular" => [
+    0x38 => [0x23B0,0,900], # left curly brace upper hook, for lgroup, lmoustache
+    0x39 => [0x23B1,0,900], # right curly brace upper hook, for rgroup, rmoustache
+    0x3A => 0x23A9,         # left curly brace lower hook, for lgroup, rmoustache
+    0x3B => 0x23AD,         # right curly brace lower hook, for rgroup, lmoustache
   ],
 };
 
@@ -1506,67 +1484,43 @@ $extra{'Main-Regular'} = {
   ],
 
   lgroup => [
-    'Generate("otf/KaTeX_Main-Regular.otf")',
-    'Open("otf/KaTeX_Size4-Regular.otf")',
-    'Select(0u23A7)','Copy()',
-    'Select(0u23B8)','Paste()',
+    'Select(0u23B0)','Copy()',
+    'Select(0u27EE)','Paste()',
     'Select(0u23A9)','Copy()',
-    'Select(0u23B8)',
+    'Select(0u27EE)',
     'PasteWithOffset(0,0)',
     'Scale(55,0,0)','RoundToInt()','Move(-38,250)',
     'RemoveOverlap()','Simplify()',
     'SetRBearing(-38,1)',
-    'Copy()','Clear()',
-    'Open("otf/KaTeX_Main-Regular.otf")',
-    'Select(0u27EE)','Paste()',
   ],
 
   rgroup => [
-    'Generate("otf/KaTeX_Main-Regular.otf")',
-    'Open("otf/KaTeX_Size4-Regular.otf")',
-    'Select(0u23AB)','Copy()',
-    'Select(0u23B8)','Paste()',
+    'Select(0u23B1)','Copy()',
+    'Select(0u27EF)','Paste()',
     'Select(0u23AD)','Copy()',
-    'Select(0u23B8)',
+    'Select(0u27EF)',
     'PasteWithOffset(1,0)',
     'Scale(55,0,0)','RoundToInt()','Move(-38,250)',
     'RemoveOverlap()','Simplify()',
     'SetRBearing(-38,1)',
-    'Copy()','Clear()',
-    'Open("otf/KaTeX_Main-Regular.otf")',
-    'Select(0u27EF)','Paste()',
   ],
 
   lmoustache => [
-    'Generate("otf/KaTeX_Main-Regular.otf")',
-    'Open("otf/KaTeX_Size4-Regular.otf")',
-    'Select(0u23A7)','Copy()',
-    'Select(0u23B8)','Paste()',
     'Select(0u23AD)','Copy()',
-    'Select(0u23B8)',
+    'Select(0u23B0)',
     'PasteWithOffset(0,0)',
     'Scale(55,0,0)','RoundToInt()','Move(-38,250)',
     'RemoveOverlap()','Simplify()',
     'SetRBearing(-38,1)',
-    'Copy()','Clear()',
-    'Open("otf/KaTeX_Main-Regular.otf")',
-    'Select(0u23B0)','Paste()',
   ],
 
   rmoustache => [
-    'Generate("otf/KaTeX_Main-Regular.otf")',
-    'Open("otf/KaTeX_Size4-Regular.otf")',
-    'Select(0u23AB)','Copy()',
-    'Select(0u23B8)','Paste()',
     'Select(0u23A9)','Copy()',
-    'Select(0u23B8)',
+    'Select(0u23B1)',
     'PasteWithOffset(0,0)',
     'Scale(55,0,0)','RoundToInt()','Move(-38,250)',
     'RemoveOverlap()','Simplify()',
     'SetRBearing(-38,1)',
-    'Copy()','Clear()',
-    'Open("otf/KaTeX_Main-Regular.otf")',
-    'Select(0u23B1)','Paste()',
   ],
 
   diacriticals => [
@@ -1854,9 +1808,6 @@ $extra{'Main-Italic'} = {
   ],
 };
 
-$extra{'Math-BoldItalic'} = {
-};
-
 $extra{'Size1'} = {
   iint => [
     'Select(0u222B)', 'Copy()',
@@ -2013,7 +1964,11 @@ foreach $cmfont (sort (keys %map)) {
     @remap = @{$map{$cmfont}{$mjfont}};
     while (defined($item = shift(@remap))) {
       $remap = shift(@remap);
-      push(@$script,'Open("pfa/'.$cmfont.'.pfa")');
+      if ($cmfont =~ /^eu/) {
+	push(@$script,'Open("pfa/'.$cmfont.'.pfb")');
+      } else {
+	push(@$script,'Open("pfa/'.$cmfont.'.pfa")');
+      }
       if (ref($item) eq "ARRAY") {
 	push(@$script,'Select('.sprintf("%d,%d",@$item).')');
       } else {
@@ -2050,6 +2005,14 @@ foreach $font (keys %extra) {
   }
 }
 
+# Cleanup temporary glyphs
+push(@{$script{'Main-Regular'}},
+  'Select(0u23A9)',
+  'Clear()',
+  'Select(0u23AD)',
+  'Clear()',
+);
+
 #
 #  Write all scripts
 #
@@ -2057,7 +2020,7 @@ foreach $font (sort keys %script) {
   $family = $font; $family .= "-Regular" unless $family =~ m/-/;
   $style = $family; $style =~ s/.*-//;
   print "KaTeX_$font\n";
-  open(SCRIPT,">","ff/KaTeX_$font.ff");
+  open(SCRIPT,">","ff/KaTeX_$family.ff");
   print SCRIPT join(";\n",@{$script{$font}},@{$style{$style}},"",
                     'SelectAll()','RoundToInt()',
 		    'Simplify()','AddExtrema()','Simplify()',
