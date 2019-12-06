@@ -1902,36 +1902,6 @@ $extra{"SansSerif-Bold"} = {
 
 #########################################################################
 
-$style{Regular} = [
-  'Select(0uEFFF)', 'Copy()',
-  'Select(0uEFFD)', 'Paste()',
-  'PasteWithOffset(200,0)',
-  'SetRBearing(200,1)'
-];
-
-$style{Bold} = [
-  'Select(0uEFFF)', 'Copy()',
-  'Select(0uEFFD)', 'Paste()',
-  'PasteWithOffset(400,0)',
-  'SetRBearing(400,1)'
-];
-
-$style{Italic} = [
-  'Select(0uEFFF)', 'Copy()',
-  'Select(0uEFFD)', 'Paste()',
-  'PasteWithOffset(600,0)',
-  'SetRBearing(600,1)'
-];
-
-$style{BoldItalic} = [
-  'Select(0uEFFF)', 'Copy()',
-  'Select(0uEFFD)', 'Paste()',
-  'PasteWithOffset(800,0)',
-  'SetRBearing(800,1)'
-];
-
-#########################################################################
-
 foreach $cmfont (sort (keys %map)) {
   print "Reading $cmfont...\n";
   foreach $mjfont (keys %{$map{$cmfont}}) {
@@ -2016,10 +1986,9 @@ push(@{$script{'Main-Regular'}},
 #
 foreach $font (sort keys %script) {
   $family = $font; $family .= "-Regular" unless $family =~ m/-/;
-  $style = $family; $style =~ s/.*-//;
   print "KaTeX_$font\n";
   open(SCRIPT,">","ff/KaTeX_$family.ff");
-  print SCRIPT join(";\n",@{$script{$font}},@{$style{$style}},"",
+  print SCRIPT join(";\n",@{$script{$font}},"",
                     'SelectAll()','RoundToInt()',
 		    'Simplify()','AddExtrema()','Simplify()',
 		    'ClearHints()','AutoHint()','RoundToInt()',

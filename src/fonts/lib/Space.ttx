@@ -6,8 +6,6 @@
     <GlyphID id="0" name=".notdef"/>
     <GlyphID id="1" name="space"/>
     <GlyphID id="2" name="uni00A0"/>
-    <GlyphID id="3" name="uniEFFE"/>
-    <GlyphID id="4" name="uniEFFF"/>
   </GlyphOrder>
 
   <head>
@@ -20,9 +18,9 @@
     <unitsPerEm value="1000"/>
     <created value="Sun Jan 24 23:04:46 2010"/>
     <modified value="Sat May 14 12:26:22 2011"/>
-    <xMin value="0"/>
+    <xMin value="50"/>
     <yMin value="0"/>
-    <xMax value="300"/>
+    <xMax value="200"/>
     <yMax value="533"/>
     <macStyle value="00000000 00000000"/>
     <lowestRecPPEM value="8"/>
@@ -36,10 +34,10 @@
     <ascent value="800"/>
     <descent value="-200"/>
     <lineGap value="90"/>
-    <advanceWidthMax value="300"/>
-    <minLeftSideBearing value="0"/>
-    <minRightSideBearing value="0"/>
-    <xMaxExtent value="300"/>
+    <advanceWidthMax value="250"/>
+    <minLeftSideBearing value="50"/>
+    <minRightSideBearing value="50"/>
+    <xMaxExtent value="200"/>
     <caretSlopeRise value="1"/>
     <caretSlopeRun value="0"/>
     <caretOffset value="0"/>
@@ -48,12 +46,12 @@
     <reserved2 value="0"/>
     <reserved3 value="0"/>
     <metricDataFormat value="0"/>
-    <numberOfHMetrics value="5"/>
+    <numberOfHMetrics value="1"/>
   </hhea>
 
   <maxp>
     <tableVersion value="0x5000"/>
-    <numGlyphs value="5"/>
+    <numGlyphs value="3"/>
   </maxp>
 
   <OS_2>
@@ -93,8 +91,8 @@
     <ulUnicodeRange4 value="00000000 00000000 00000000 00000000"/>
     <achVendID value="PfEd"/>
     <fsSelection value="00000000 01000000"/>
-    <usFirstCharIndex value="61438"/>
-    <usLastCharIndex value="61439"/>
+    <usFirstCharIndex value="32"/>
+    <usLastCharIndex value="160"/>
     <sTypoAscender value="800"/>
     <sTypoDescender value="-200"/>
     <sTypoLineGap value="90"/>
@@ -151,14 +149,10 @@ http://scripts.sil.org/OFL
     <cmap_format_4 platformID="0" platEncID="3" language="0">
       <map code="0x20" name="space"/><!-- SPACE -->
       <map code="0xa0" name="uni00A0"/><!-- NO-BREAK SPACE -->
-      <map code="0xeffe" name="uniEFFE"/><!-- ???? -->
-      <map code="0xefff" name="uniEFFF"/><!-- ???? -->
     </cmap_format_4>
     <cmap_format_4 platformID="3" platEncID="1" language="0">
       <map code="0x20" name="space"/><!-- SPACE -->
       <map code="0xa0" name="uni00A0"/><!-- NO-BREAK SPACE -->
-      <map code="0xeffe" name="uniEFFE"/><!-- ???? -->
-      <map code="0xefff" name="uniEFFF"/><!-- ???? -->
     </cmap_format_4>
   </cmap>
 
@@ -190,7 +184,7 @@ http://scripts.sil.org/OFL
       <PaintType value="0"/>
       <CharstringType value="2"/>
       <FontMatrix value="0.001 0 0 0.001 0 0"/>
-      <FontBBox value="0 0 300 533"/>
+      <FontBBox value="50 0 200 533"/>
       <StrokeWidth value="0"/>
       <!-- charset is dumped separately as the 'GlyphOrder' element -->
       <Encoding name="StandardEncoding"/>
@@ -223,22 +217,6 @@ http://scripts.sil.org/OFL
         <CharString name="uni00A0">
           endchar
         </CharString>
-        <CharString name="uniEFFE">
-          107 0 100 hstem
-          0 100 100 100 vstem
-          0 vmoveto
-          100 100 -100 hlineto
-          200 -100 rmoveto
-          100 100 -100 hlineto
-          endchar
-        </CharString>
-        <CharString name="uniEFFF">
-          -93 0 100 hstem
-          0 100 vstem
-          0 vmoveto
-          100 100 -100 hlineto
-          endchar
-        </CharString>
       </CharStrings>
     </CFFFont>
 
@@ -251,8 +229,6 @@ http://scripts.sil.org/OFL
     <mtx name=".notdef" width="250" lsb="50"/>
     <mtx name="space" width="250" lsb="0"/>
     <mtx name="uni00A0" width="250" lsb="0"/>
-    <mtx name="uniEFFE" width="300" lsb="0"/>
-    <mtx name="uniEFFF" width="100" lsb="0"/>
   </hmtx>
 
 </ttFont>
