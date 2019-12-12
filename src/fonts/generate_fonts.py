@@ -29,12 +29,16 @@ if 'FFTM' in font:
 if 'GDEF' in font:
     del font['GDEF']
 
+# remove Macintosh table
+# https://developer.apple.com/fonts/TrueType-Reference-Manual/RM06/Chap6cmap.html
+font['name'].names = [record for record in font['name'].names if record.platformID != 1]
+font['cmap'].tables = [table for table in font['cmap'].tables if table.platformID != 1]
+
 # set font version from package.json
 with open(os.path.join(os.path.dirname(__file__), '../../package.json')) as f:
     version = json.load(f)['version']
 
 font['name'].setName(unicode('Version ' + version), 5, 3, 1, 1033)
-font['name'].setName(unicode('Version ' + version), 5, 1, 0, 0)
 
 # fix OS/2 and hhea metrics
 glyf = font['glyf']
