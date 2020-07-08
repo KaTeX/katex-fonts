@@ -73,7 +73,7 @@ fi
 
 CMDS="set -ex
 export SOURCE_DATE_EPOCH=${LAST_COMMIT_DATE}
-tar xfP MathJax-dev.tar.gz
+tar xfP katex-fonts.tar.gz
 cp default.cfg custom.cfg
 make custom.cfg.pl
 make -C fonts fonts
@@ -82,7 +82,7 @@ tar cf /fonts.tar ${filetypes[*]/#/fonts/}"
 echo "Creating and starting docker container from image $IMAGE"
 CONTAINER=$(docker create "$IMAGE" /bin/sh -c "${CMDS}")
 if [[ ${FILE} ]]; then
-    docker cp "${FILE}" $CONTAINER:/MathJax-dev.tar.gz
+    docker cp "${FILE}" $CONTAINER:/katex-fonts.tar.gz
 fi
 docker start --attach $CONTAINER
 docker cp $CONTAINER:/fonts.tar .
