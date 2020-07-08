@@ -8,7 +8,7 @@ The `buildFonts.sh` script should do everything automatically,
 as long as Docker is installed.
 
 If you want to try out a change
-to [the MathJax-dev repository](https://github.com/Khan/MathJax-dev),
+to [the katex-fonts repository](https://github.com/KaTeX/katex-fonts),
 create a local clone (or download and unpack the ZIP file)
 and specify the path to this directory as an argument to `buildFonts.sh`.
 You can also specify a local or remote tarball,
