@@ -20,8 +20,8 @@ $map{cmr10} = {
     [7,8] => 0x3A5,         # \Upsilon, \Phi
     [9,0xA] => 0x3A8,       # \Psi, \Omega
 
-    0x10 => 0x131,          # \imath (roman)
-    0x11 => 0x237,          # \jmath (roman)
+    0x10 => 0x131,          # \i
+    0x11 => 0x237,          # \j
     0x12 => 0x2CB,          # \grave
     0x13 => 0x2CA,          # \acute
     0x14 => 0x2C7,          # \check
@@ -87,9 +87,13 @@ $map{cmmi10} = {
     0x26 => 0x3C2,          # \varsigma
     0x27 => 0x3C6,          # \varphi
 
+    [0x30,0x39] => 0x30,    # Oldstyle 0-9
     [0x41,0x5A] => 0x41,    # A-Z
     [0x61,0x7A] => 0x61,    # a - z
+
     0x6F => 0x3BF,          # omicron
+    0x7B => 0xE131,         # \imath (PUA)
+    0x7C => 0xE237,         # \jmath (PUA)
   ],
 
   "Main-Regular" => [
@@ -114,15 +118,6 @@ $map{cmmi10} = {
 
     0x7D => 0x2118,         # \wp
     0x7E => [0x20D7,-653,0],# \vec
-  ],
-
-  "Main-Italic" => [
-    0x7B => 0x131,          # \imath
-    0x7C => 0x237,          # \jmath
-  ],
-
-  "Caligraphic-Regular" => [
-    [0x30,0x39] => 0x30,    # Oldstyle 0-9
   ],
 };
 
@@ -407,7 +402,6 @@ $map{cmti10} = {
 
     [0x21,0x23] => 0x21,    # !, ", #,
     0x22 => 0x201D,         # "
-    0x24 => 0xA3,           # pound sign
     [0x25,0x2F] => 0x25,    # %, &, ', (, ), *, +, comma, -, ., /
     0x27 => 0x2019,         # '
     [0x30,0x39] => 0x30,    # 0-9
@@ -436,6 +430,10 @@ $map{cmti10} = {
     0x1E => 0x152,          # OE ligature
     0x1F => 0xD8,           # O with slash
   ],
+
+  "Main-Regular" => [
+    0x24 => 0xA3,           # pound sign
+  ],
 };
 
 $map{cmbx10} = {
@@ -449,8 +447,8 @@ $map{cmbx10} = {
     [7,8] => 0x3A5,         # \Upsilon, \Phi
     [9,0xA] => 0x3A8,       # \Psi, \Omega
 
-    0x10 => 0x131,          # \imath (roman bold)
-    0x11 => 0x237,          # \jmath (roman bold)
+    0x10 => 0x131,          # \i
+    0x11 => 0x237,          # \j
     0x12 => 0x2CB,          # \grave
     0x13 => 0x2CA,          # \acute
     0x14 => 0x2C7,          # \check
@@ -502,8 +500,8 @@ $map{cmbxti10} = {
     [7,8] => 0x3A5,         # \Upsilon, \Phi
     [9,0xA] => 0x3A8,       # \Psi, \Omega
 
-    0x10 => 0x131,          # \imath (roman)
-    0x11 => 0x237,          # \jmath (roman)
+    0x10 => 0x131,          # \i
+    0x11 => 0x237,          # \j
     0x12 => 0x2CB,          # \grave
     0x13 => 0x2CA,          # \acute
     0x14 => 0x2C7,          # \check
@@ -515,7 +513,6 @@ $map{cmbxti10} = {
 
     [0x21,0x23] => 0x21,    # !, ", #,
     0x22 => 0x201D,         # "
-    0x24 => 0xA3,           # pound sign
     [0x25,0x2F] => 0x25,    # %, &, ', (, ), *, +, comma, -, ., /
     0x27 => 0x2019,         # '
     [0x30,0x39] => 0x30,    # 0-9
@@ -543,6 +540,10 @@ $map{cmbxti10} = {
     0x1D => 0xC6,           # AE ligature
     0x1E => 0x152,          # OE ligature
     0x1F => 0xD8,           # O with slash
+  ],
+
+  "Main-Bold" => [
+    0x24 => 0xA3,           # pound sign
   ],
 };
 
@@ -573,7 +574,11 @@ $map{cmmib10} = {
 
     [0x41,0x5A] => 0x41,    # A-Z
     [0x61,0x7A] => 0x61,    # a - z
+    [0x30,0x39] => 0x30,    # Oldstyle 0-9
+
     0x6F => 0x3BF,          # omicron
+    0x7B => 0xE131,         # \imath (PUA)
+    0x7C => 0xE237,         # \jmath (PUA)
   ],
 
   "Main-Bold" => [
@@ -995,8 +1000,8 @@ $map{cmtt10} = {
     [9,0xA] => 0x3A8,       # \Psi, \Omega
     0xD => 0x2032,          # '
 
-    0x10 => 0x131,          # \imath (roman)
-    0x11 => 0x237,          # \jmath (roman)
+    0x10 => 0x131,          # \i
+    0x11 => 0x237,          # \j
     0x12 => 0x2CB,          # \grave
     0x13 => 0x2CA,          # \acute
     0x14 => 0x2C7,          # \check
@@ -1034,8 +1039,8 @@ $map{cmssbx10} = {
     [7,8] => 0x3A5,         # \Upsilon, \Phi
     [9,0xA] => 0x3A8,       # \Psi, \Omega
 
-    0x10 => 0x131,          # \imath (roman)
-    0x11 => 0x237,          # \jmath (roman)
+    0x10 => 0x131,          # \i
+    0x11 => 0x237,          # \j
     0x13 => 0xB4,           # \acute
     0x14 => 0x2C7,          # \check
     0x15 => 0x2D8,          # \breve
@@ -1079,8 +1084,8 @@ $map{cmss10} = {
     [7,8] => 0x3A5,         # \Upsilon, \Phi
     [9,0xA] => 0x3A8,       # \Psi, \Omega
 
-    0x10 => 0x131,          # \imath (roman)
-    0x11 => 0x237,          # \jmath (roman)
+    0x10 => 0x131,          # \i
+    0x11 => 0x237,          # \j
     0x12 => 0x2CB,          # \grave
     0x13 => 0x2CA,          # \acute
     0x14 => 0x2C7,          # \check
@@ -1125,8 +1130,8 @@ $map{cmssi10} = {
     [7,8] => 0x3A5,         # \Upsilon, \Phi
     [9,0xA] => 0x3A8,       # \Psi, \Omega
 
-    0x10 => 0x131,          # \imath (roman)
-    0x11 => 0x237,          # \jmath (roman)
+    0x10 => 0x131,          # \i
+    0x11 => 0x237,          # \j
     0x12 => 0x2CB,          # \grave
     0x13 => 0x2CA,          # \acute
     0x14 => 0x2C7,          # \check
