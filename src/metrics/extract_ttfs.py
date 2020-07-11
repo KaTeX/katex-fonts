@@ -72,15 +72,9 @@ def main():
                 if (t.platformID == 0)
                 or (t.platformID == 3 and t.platEncID in (1, 10))]
 
-        if font in metrics_to_extract:
-            chars = metrics_to_extract[font]
-            chars[u"\u0020"] = None  # space
-            chars[u"\u00a0"] = None  # nbsp
-        else:
-            chars = {
-                u"\u0020": None,  # space
-                u"\u00a0": None,  # nbsp
-            }
+        chars = metrics_to_extract.get(font, {})
+        chars[u"\u0020"] = None  # space
+        chars[u"\u00a0"] = None  # nbsp
 
         for char, base_char in chars.iteritems():
             code = ord(char)
