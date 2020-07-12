@@ -20,8 +20,6 @@ metrics_to_extract = {
         #u"\u2209": None,  # \notin
         #u"\u2260": None,  # \neq
         u"\u2245": None,  # \cong
-        u"\u0020": None,  # space
-        u"\u00a0": None,  # nbsp
         u"\u2026": None,  # \ldots
         u"\u22ef": None,  # \cdots
         u"\u22f1": None,  # \ddots
@@ -54,17 +52,13 @@ metrics_to_extract = {
         u"\u222c": u"\u222b",  # \iint, based on \int
         u"\u222d": u"\u222b",  # \iiint, based on \int
     },
-    "Typewriter-Regular": {
-        u"\u0020": None,  # space
-        u"\u00a0": None,  # nbsp
-    },
 }
 
 
 def main():
     start_json = json.load(sys.stdin)
 
-    for font, chars in metrics_to_extract.iteritems():
+    for font in start_json:
         fontInfo = TTFont("../../fonts/KaTeX_" + font + ".ttf")
         glyf = fontInfo["glyf"]
         widths = fontInfo.getGlyphSet()
@@ -77,6 +71,10 @@ def main():
         cmap = [t.cmap for t in fontInfo["cmap"].tables
                 if (t.platformID == 0)
                 or (t.platformID == 3 and t.platEncID in (1, 10))]
+
+        chars = metrics_to_extract.get(font, {})
+        chars[u"\u0020"] = None  # space
+        chars[u"\u00a0"] = None  # nbsp
 
         for char, base_char in chars.iteritems():
             code = ord(char)
